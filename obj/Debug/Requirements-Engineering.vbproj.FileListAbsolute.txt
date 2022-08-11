@@ -1,0 +1,12 @@
+C:\Users\BetoB\source\repos\Requirements-Engineering\bin\Debug\Requirements-Engineering.exe.config
+C:\Users\BetoB\source\repos\Requirements-Engineering\bin\Debug\Requirements-Engineering.exe
+C:\Users\BetoB\source\repos\Requirements-Engineering\bin\Debug\Requirements-Engineering.pdb
+C:\Users\BetoB\source\repos\Requirements-Engineering\bin\Debug\Requirements-Engineering.xml
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engineering.vbproj.AssemblyReference.cache
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Resources.resources
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engineering.vbproj.GenerateResource.cache
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engineering.vbproj.CoreCompileInputs.cache
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engineering.exe
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engineering.xml
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engineering.pdb
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.sign_in.resources
