@@ -6,26 +6,6 @@ Public Class sign_in
 
     End Sub
 
-    Private Sub LabelPassword_Click(sender As Object, e As EventArgs) Handles LabelPassword.Click
-
-    End Sub
-
-    Private Sub PictureBoxLogo_Click(sender As Object, e As EventArgs) Handles PictureBoxLogo.Click
-
-    End Sub
-
-    Private Sub TxtBox_Password_TextChanged(sender As Object, e As EventArgs) Handles TxtBox_Password.TextChanged
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub LinkLabel_Recover_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel_Recover.LinkClicked
-
-    End Sub
-
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
         Me.Close()
     End Sub
@@ -36,7 +16,12 @@ Public Class sign_in
 
     Private Sub sign_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CBox_User.Text = "Select User"
-        TxtBox_Password.Text = "quack20"
+        CBox_User.SelectedIndex = 0
+        If CBox_User.Text = "Alex" Then
+            TxtBox_Password.Text = "quack10"
+        ElseIf CBox_User.Text = "John Doe" Then
+            TxtBox_Password.Text = "quack20"
+        End If
     End Sub
 
     '//**************************************************************
@@ -66,9 +51,41 @@ Public Class sign_in
     End Sub
 
     Private Sub ButtonEnter_Click(sender As Object, e As EventArgs) Handles ButtonEnter.Click
-        If CBox_User.Text = "John Doe" And TxtBox_Password.Text = "quack20" Then
+        If CBox_User.Text = "John Doe" And TxtBox_Password.Text = "quack20" Or CBox_User.Text = "Alex" And TxtBox_Password.Text = "quack10" Then
             Me.Hide()
             Welcome.Show()
+
+        Else
+
+            MsgBox("Incorrect password/user, try again.", MsgBoxStyle.Critical, "Login")
+            TxtBox_Password.Clear()
+            TxtBox_Password.Focus()
+        End If
+
+        '// Error message structure on emergent window'
+        '// MSGBOX, message, window styles, window title '
+        '// Styles: critical, okonly, yes/no'
+    End Sub
+
+    Private Sub CBoxUser_IndexChanged(sender As Object, e As EventArgs) Handles CBox_User.SelectedIndexChanged
+        If CBox_User.Text = "John Doe" Then
+
+            LabelEmail.Text = "johndoe@gmail.com"
+            LabelType.Text = "Admin"
+            LabelExp.Text = "268986"
+
+        ElseIf CBox_User.Text = "Alex" Then
+
+            LabelEmail.Text = "alex@gmail.com"
+            LabelType.Text = "User"
+            LabelExp.Text = "318035"
+
+        End If
+
+        If CBox_User.Text = "Alex" Then
+            TxtBox_Password.Text = "quack10"
+        ElseIf CBox_User.Text = "John Doe" Then
+            TxtBox_Password.Text = "quack20"
         End If
     End Sub
 End Class

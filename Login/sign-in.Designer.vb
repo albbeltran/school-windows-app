@@ -36,6 +36,9 @@ Partial Class sign_in
         Me.PanelBottom = New System.Windows.Forms.Panel()
         Me.ButtonEnter = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.LabelEmail = New System.Windows.Forms.Label()
+        Me.LabelExp = New System.Windows.Forms.Label()
+        Me.LabelType = New System.Windows.Forms.Label()
         Me.PanelTitle.SuspendLayout()
         CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBottom.SuspendLayout()
@@ -152,7 +155,7 @@ Partial Class sign_in
         Me.LinkLabel_Recover.BackColor = System.Drawing.Color.Transparent
         Me.LinkLabel_Recover.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel_Recover.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel_Recover.Location = New System.Drawing.Point(99, 530)
+        Me.LinkLabel_Recover.Location = New System.Drawing.Point(98, 476)
         Me.LinkLabel_Recover.Name = "LinkLabel_Recover"
         Me.LinkLabel_Recover.Size = New System.Drawing.Size(201, 17)
         Me.LinkLabel_Recover.TabIndex = 7
@@ -196,12 +199,51 @@ Partial Class sign_in
         Me.Label1.Text = "Sign In"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'LabelEmail
+        '
+        Me.LabelEmail.AutoSize = True
+        Me.LabelEmail.BackColor = System.Drawing.Color.Transparent
+        Me.LabelEmail.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelEmail.ForeColor = System.Drawing.Color.Black
+        Me.LabelEmail.Location = New System.Drawing.Point(21, 646)
+        Me.LabelEmail.Name = "LabelEmail"
+        Me.LabelEmail.Size = New System.Drawing.Size(48, 17)
+        Me.LabelEmail.TabIndex = 9
+        Me.LabelEmail.Text = "Email"
+        '
+        'LabelExp
+        '
+        Me.LabelExp.AutoSize = True
+        Me.LabelExp.BackColor = System.Drawing.Color.Transparent
+        Me.LabelExp.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelExp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LabelExp.Location = New System.Drawing.Point(21, 672)
+        Me.LabelExp.Name = "LabelExp"
+        Me.LabelExp.Size = New System.Drawing.Size(35, 17)
+        Me.LabelExp.TabIndex = 11
+        Me.LabelExp.Text = "Exp"
+        '
+        'LabelType
+        '
+        Me.LabelType.AutoSize = True
+        Me.LabelType.BackColor = System.Drawing.Color.Transparent
+        Me.LabelType.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LabelType.Location = New System.Drawing.Point(21, 698)
+        Me.LabelType.Name = "LabelType"
+        Me.LabelType.Size = New System.Drawing.Size(43, 17)
+        Me.LabelType.TabIndex = 13
+        Me.LabelType.Text = "Type"
+        '
         'sign_in
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(400, 800)
+        Me.Controls.Add(Me.LabelType)
+        Me.Controls.Add(Me.LabelExp)
+        Me.Controls.Add(Me.LabelEmail)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PanelBottom)
         Me.Controls.Add(Me.LinkLabel_Recover)
@@ -236,4 +278,7 @@ Partial Class sign_in
     Friend WithEvents PanelBottom As Panel
     Friend WithEvents ButtonEnter As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents LabelEmail As Label
+    Friend WithEvents LabelExp As Label
+    Friend WithEvents LabelType As Label
 End Class

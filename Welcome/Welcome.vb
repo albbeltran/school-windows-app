@@ -3,7 +3,11 @@ Imports System.Runtime.InteropServices
 
 Public Class Welcome
     Private Sub Welcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        LabelName.Text = sign_in.CBox_User.Text
+        LabelPassword.Text = sign_in.TxtBox_Password.Text
+        LabelEmail.Text = sign_in.LabelEmail.Text
+        LabelType.Text = sign_in.LabelType.Text
+        LabelExp.Text = sign_in.LabelExp.Text
     End Sub
 
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
