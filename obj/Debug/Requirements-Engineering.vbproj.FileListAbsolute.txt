@@ -10,3 +10,4 @@ C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engi
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engineering.xml
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engineering.pdb
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.sign_in.resources
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Welcome.resources

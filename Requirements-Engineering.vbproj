@@ -95,6 +95,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Welcome\Welcome.Designer.vb">
+      <DependentUpon>Welcome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome\Welcome.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login\sign-in.resx">
@@ -105,6 +111,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome\Welcome.resx">
+      <DependentUpon>Welcome.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

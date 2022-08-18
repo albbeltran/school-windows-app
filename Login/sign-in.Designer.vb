@@ -132,6 +132,7 @@ Partial Class sign_in
         'CBox_User
         '
         Me.CBox_User.FormattingEnabled = True
+        Me.CBox_User.Items.AddRange(New Object() {"Alex", "John Doe"})
         Me.CBox_User.Location = New System.Drawing.Point(64, 359)
         Me.CBox_User.Name = "CBox_User"
         Me.CBox_User.Size = New System.Drawing.Size(275, 24)
@@ -141,6 +142,7 @@ Partial Class sign_in
         '
         Me.TxtBox_Password.Location = New System.Drawing.Point(64, 425)
         Me.TxtBox_Password.Name = "TxtBox_Password"
+        Me.TxtBox_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtBox_Password.Size = New System.Drawing.Size(275, 22)
         Me.TxtBox_Password.TabIndex = 6
         '
