@@ -1,10 +1,14 @@
-﻿'-------LIBRARIES OR DLL---------'
+﻿'-------LIBRARIES OR DLL---------
 Imports System.Runtime.InteropServices
 
 Public Class sign_in
-    Private Sub LabelTitle_Click(sender As Object, e As EventArgs) Handles LabelTitle.Click
+    '// PUBLIC AND PRIVATE VARIABLES
 
-    End Sub
+    Public User_Name As String
+    Public User_Email As String
+    Public User_Type As String
+    Public User_Password As String
+    Public User_Exp As Double
 
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
         Me.Close()
@@ -22,6 +26,75 @@ Public Class sign_in
         ElseIf CBox_User.Text = "John Doe" Then
             TxtBox_Password.Text = "quack20"
         End If
+    End Sub
+
+    Private Sub ButtonEnter_Click(sender As Object, e As EventArgs) Handles ButtonEnter.Click
+        enter_process()
+    End Sub
+
+    Private Sub CBoxUser_IndexChanged(sender As Object, e As EventArgs) Handles CBox_User.SelectedIndexChanged
+        User_Name = CBox_User.Text
+
+        If User_Name = "John Doe" Then
+
+            User_Email = "johndoe@gmail.com"
+            User_Type = "Admin"
+            User_Exp = "268986"
+
+        ElseIf User_Name = "Alex" Then
+
+            User_Email = "alex@gmail.com"
+            User_Type = "User"
+            User_Exp = "318035"
+
+        End If
+
+        If User_Name = "Alex" Then
+            User_Password = "quack10"
+        ElseIf CBox_User.Text = "John Doe" Then
+            User_Password = "quack20"
+        End If
+    End Sub
+
+    Private Sub ButtonHidePass_Click(sender As Object, e As EventArgs) Handles ButtonHidePass.Click
+        TxtBox_Password.PasswordChar = "*"
+        ButtonHidePass.Visible = False
+        ButtonShowPass.Visible = True
+    End Sub
+
+    Private Sub ButtonShowPass_Click(sender As Object, e As EventArgs) Handles ButtonShowPass.Click
+        TxtBox_Password.PasswordChar = ""
+        ButtonHidePass.Visible = True
+        ButtonShowPass.Visible = False
+    End Sub
+
+    Private Sub CBox_User_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CBox_User.KeyPress
+        e.KeyChar = ""
+    End Sub
+
+    Private Sub TxtBox_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBox_Password.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            enter_process()
+        End If
+    End Sub
+
+    '// PUBLIC AND PRIVATE PROCESS
+
+    Private Sub enter_process()
+        If CBox_User.Text = "John Doe" And TxtBox_Password.Text = "quack20" Or CBox_User.Text = "Alex" And TxtBox_Password.Text = "quack10" Then
+            Me.Hide()
+            Welcome.Show()
+
+        Else
+
+            MsgBox("Incorrect password/user, try again.", MsgBoxStyle.Critical, "Login")
+            TxtBox_Password.Clear()
+            TxtBox_Password.Focus()
+        End If
+
+        '// Error message structure on emergent window
+        '// MSGBOX, message, window styles, window title 
+        '// Styles: critical, okonly, yes/no
     End Sub
 
     '//**************************************************************
@@ -48,44 +121,5 @@ Public Class sign_in
     Private Sub PanelBottom_MouseDown(sender As Object, e As MouseEventArgs) Handles PanelBottom.MouseDown
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
-    End Sub
-
-    Private Sub ButtonEnter_Click(sender As Object, e As EventArgs) Handles ButtonEnter.Click
-        If CBox_User.Text = "John Doe" And TxtBox_Password.Text = "quack20" Or CBox_User.Text = "Alex" And TxtBox_Password.Text = "quack10" Then
-            Me.Hide()
-            Welcome.Show()
-
-        Else
-
-            MsgBox("Incorrect password/user, try again.", MsgBoxStyle.Critical, "Login")
-            TxtBox_Password.Clear()
-            TxtBox_Password.Focus()
-        End If
-
-        '// Error message structure on emergent window'
-        '// MSGBOX, message, window styles, window title '
-        '// Styles: critical, okonly, yes/no'
-    End Sub
-
-    Private Sub CBoxUser_IndexChanged(sender As Object, e As EventArgs) Handles CBox_User.SelectedIndexChanged
-        If CBox_User.Text = "John Doe" Then
-
-            LabelEmail.Text = "johndoe@gmail.com"
-            LabelType.Text = "Admin"
-            LabelExp.Text = "268986"
-
-        ElseIf CBox_User.Text = "Alex" Then
-
-            LabelEmail.Text = "alex@gmail.com"
-            LabelType.Text = "User"
-            LabelExp.Text = "318035"
-
-        End If
-
-        If CBox_User.Text = "Alex" Then
-            TxtBox_Password.Text = "quack10"
-        ElseIf CBox_User.Text = "John Doe" Then
-            TxtBox_Password.Text = "quack20"
-        End If
     End Sub
 End Class
