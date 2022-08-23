@@ -11,7 +11,7 @@ Public Class sign_in
     Public User_Exp As Double
 
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
-        Me.Close()
+        TimerClose.Start()
     End Sub
 
     Private Sub ButtonMin_Click(sender As Object, e As EventArgs) Handles ButtonMin.Click
@@ -22,10 +22,12 @@ Public Class sign_in
         CBox_User.Text = "Select User"
         CBox_User.SelectedIndex = 0
         If CBox_User.Text = "Alex" Then
-            TxtBox_Password.Text = "quack10"
+            TxtBox_Password.Text = User_Password
         ElseIf CBox_User.Text = "John Doe" Then
-            TxtBox_Password.Text = "quack20"
+            TxtBox_Password.Text = User_Password
         End If
+        Me.Opacity = 0
+        TimerOpen.Start()
     End Sub
 
     Private Sub ButtonEnter_Click(sender As Object, e As EventArgs) Handles ButtonEnter.Click
@@ -121,5 +123,24 @@ Public Class sign_in
     Private Sub PanelBottom_MouseDown(sender As Object, e As MouseEventArgs) Handles PanelBottom.MouseDown
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
+    End Sub
+
+    Private Sub TimerOpen_Tick(sender As Object, e As EventArgs) Handles TimerOpen.Tick
+        If Me.Opacity < 1 Then
+            Me.Opacity += 0.05
+        End If
+
+        If Me.Opacity = 1 Then
+            TimerOpen.Stop()
+        End If
+    End Sub
+
+    Private Sub TimerClose_Tick(sender As Object, e As EventArgs) Handles TimerClose.Tick
+        Me.Opacity -= 0.1
+
+        If Me.Opacity = 1 Then
+            TimerClose.Stop()
+            Me.Close()
+        End If
     End Sub
 End Class

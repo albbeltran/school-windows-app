@@ -22,6 +22,7 @@ Partial Class Welcome
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PanelTitle = New System.Windows.Forms.Panel()
         Me.LabelType = New System.Windows.Forms.Label()
         Me.ButtonMin = New System.Windows.Forms.Button()
@@ -31,8 +32,14 @@ Partial Class Welcome
         Me.LabelName = New System.Windows.Forms.Label()
         Me.LabelEmail = New System.Windows.Forms.Label()
         Me.LabelExp = New System.Windows.Forms.Label()
-        Me.LabelPassword = New System.Windows.Forms.Label()
+        Me.PanelBottom = New System.Windows.Forms.Panel()
+        Me.ButtonEnter = New System.Windows.Forms.Button()
+        Me.ProgressBar = New System.Windows.Forms.ProgressBar()
+        Me.TimerOpen = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerClose = New System.Windows.Forms.Timer(Me.components)
+        Me.LabelLoading = New System.Windows.Forms.Label()
         Me.PanelTitle.SuspendLayout()
+        Me.PanelBottom.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelTitle
@@ -108,7 +115,7 @@ Partial Class Welcome
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(627, 421)
+        Me.Label1.Location = New System.Drawing.Point(627, 347)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.Label1.Size = New System.Drawing.Size(161, 20)
@@ -119,9 +126,10 @@ Partial Class Welcome
         'LabelName
         '
         Me.LabelName.AutoSize = True
+        Me.LabelName.BackColor = System.Drawing.Color.Black
         Me.LabelName.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelName.Location = New System.Drawing.Point(21, 364)
+        Me.LabelName.ForeColor = System.Drawing.Color.White
+        Me.LabelName.Location = New System.Drawing.Point(21, 13)
         Me.LabelName.Name = "LabelName"
         Me.LabelName.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.LabelName.Size = New System.Drawing.Size(50, 17)
@@ -132,9 +140,10 @@ Partial Class Welcome
         'LabelEmail
         '
         Me.LabelEmail.AutoSize = True
+        Me.LabelEmail.BackColor = System.Drawing.Color.Transparent
         Me.LabelEmail.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelEmail.Location = New System.Drawing.Point(21, 393)
+        Me.LabelEmail.ForeColor = System.Drawing.Color.White
+        Me.LabelEmail.Location = New System.Drawing.Point(23, 41)
         Me.LabelEmail.Name = "LabelEmail"
         Me.LabelEmail.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.LabelEmail.Size = New System.Drawing.Size(48, 17)
@@ -146,8 +155,8 @@ Partial Class Welcome
         '
         Me.LabelExp.AutoSize = True
         Me.LabelExp.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelExp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelExp.Location = New System.Drawing.Point(21, 421)
+        Me.LabelExp.ForeColor = System.Drawing.Color.White
+        Me.LabelExp.Location = New System.Drawing.Point(77, 13)
         Me.LabelExp.Name = "LabelExp"
         Me.LabelExp.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.LabelExp.Size = New System.Drawing.Size(89, 17)
@@ -155,19 +164,62 @@ Partial Class Welcome
         Me.LabelExp.Text = "Expediente"
         Me.LabelExp.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'LabelPassword
+        'PanelBottom
         '
-        Me.LabelPassword.AutoSize = True
-        Me.LabelPassword.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelPassword.Location = New System.Drawing.Point(263, 364)
-        Me.LabelPassword.Name = "LabelPassword"
-        Me.LabelPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelPassword.Size = New System.Drawing.Size(80, 17)
-        Me.LabelPassword.TabIndex = 9
-        Me.LabelPassword.Text = "Password"
-        Me.LabelPassword.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.LabelPassword.Visible = False
+        Me.PanelBottom.BackColor = System.Drawing.Color.Black
+        Me.PanelBottom.Controls.Add(Me.ButtonEnter)
+        Me.PanelBottom.Controls.Add(Me.LabelName)
+        Me.PanelBottom.Controls.Add(Me.LabelExp)
+        Me.PanelBottom.Controls.Add(Me.LabelEmail)
+        Me.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PanelBottom.Location = New System.Drawing.Point(0, 380)
+        Me.PanelBottom.Name = "PanelBottom"
+        Me.PanelBottom.Size = New System.Drawing.Size(800, 70)
+        Me.PanelBottom.TabIndex = 10
+        '
+        'ButtonEnter
+        '
+        Me.ButtonEnter.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ButtonEnter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
+        Me.ButtonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.ButtonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEnter.ForeColor = System.Drawing.Color.White
+        Me.ButtonEnter.Location = New System.Drawing.Point(675, 13)
+        Me.ButtonEnter.Name = "ButtonEnter"
+        Me.ButtonEnter.Size = New System.Drawing.Size(109, 45)
+        Me.ButtonEnter.TabIndex = 0
+        Me.ButtonEnter.Text = "Enter"
+        Me.ButtonEnter.UseVisualStyleBackColor = True
+        '
+        'ProgressBar
+        '
+        Me.ProgressBar.Location = New System.Drawing.Point(197, 251)
+        Me.ProgressBar.Name = "ProgressBar"
+        Me.ProgressBar.Size = New System.Drawing.Size(364, 23)
+        Me.ProgressBar.TabIndex = 11
+        Me.ProgressBar.Value = 50
+        '
+        'TimerOpen
+        '
+        Me.TimerOpen.Interval = 10
+        '
+        'TimerClose
+        '
+        Me.TimerClose.Interval = 25
+        '
+        'LabelLoading
+        '
+        Me.LabelLoading.AutoSize = True
+        Me.LabelLoading.BackColor = System.Drawing.Color.Transparent
+        Me.LabelLoading.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelLoading.ForeColor = System.Drawing.Color.Black
+        Me.LabelLoading.Location = New System.Drawing.Point(345, 231)
+        Me.LabelLoading.Name = "LabelLoading"
+        Me.LabelLoading.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelLoading.Size = New System.Drawing.Size(26, 17)
+        Me.LabelLoading.TabIndex = 9
+        Me.LabelLoading.Text = "10"
+        Me.LabelLoading.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Welcome
         '
@@ -175,10 +227,9 @@ Partial Class Welcome
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.LabelPassword)
-        Me.Controls.Add(Me.LabelExp)
-        Me.Controls.Add(Me.LabelEmail)
-        Me.Controls.Add(Me.LabelName)
+        Me.Controls.Add(Me.LabelLoading)
+        Me.Controls.Add(Me.ProgressBar)
+        Me.Controls.Add(Me.PanelBottom)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LabelWelcome)
         Me.Controls.Add(Me.PanelTitle)
@@ -187,6 +238,8 @@ Partial Class Welcome
         Me.Text = "Welcome"
         Me.PanelTitle.ResumeLayout(False)
         Me.PanelTitle.PerformLayout()
+        Me.PanelBottom.ResumeLayout(False)
+        Me.PanelBottom.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -201,5 +254,10 @@ Partial Class Welcome
     Friend WithEvents LabelEmail As Label
     Friend WithEvents LabelExp As Label
     Friend WithEvents LabelType As Label
-    Friend WithEvents LabelPassword As Label
+    Friend WithEvents PanelBottom As Panel
+    Friend WithEvents ButtonEnter As Button
+    Friend WithEvents ProgressBar As ProgressBar
+    Friend WithEvents TimerOpen As Timer
+    Friend WithEvents TimerClose As Timer
+    Friend WithEvents LabelLoading As Label
 End Class

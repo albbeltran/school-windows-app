@@ -22,6 +22,7 @@ Partial Class sign_in
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(sign_in))
         Me.PanelTitle = New System.Windows.Forms.Panel()
         Me.LabelTitle = New System.Windows.Forms.Label()
@@ -38,6 +39,8 @@ Partial Class sign_in
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonHidePass = New System.Windows.Forms.Button()
         Me.ButtonShowPass = New System.Windows.Forms.Button()
+        Me.TimerOpen = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerClose = New System.Windows.Forms.Timer(Me.components)
         Me.PanelTitle.SuspendLayout()
         CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBottom.SuspendLayout()
@@ -231,6 +234,14 @@ Partial Class sign_in
         Me.ButtonShowPass.UseVisualStyleBackColor = False
         Me.ButtonShowPass.Visible = False
         '
+        'TimerOpen
+        '
+        Me.TimerOpen.Interval = 25
+        '
+        'TimerClose
+        '
+        Me.TimerClose.Interval = 25
+        '
         'sign_in
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -275,4 +286,6 @@ Partial Class sign_in
     Friend WithEvents Label1 As Label
     Friend WithEvents ButtonHidePass As Button
     Friend WithEvents ButtonShowPass As Button
+    Friend WithEvents TimerOpen As Timer
+    Friend WithEvents TimerClose As Timer
 End Class
