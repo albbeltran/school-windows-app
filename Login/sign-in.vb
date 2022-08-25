@@ -59,12 +59,14 @@ Public Class sign_in
     End Sub
 
     Private Sub ButtonHidePass_Click(sender As Object, e As EventArgs) Handles ButtonHidePass.Click
+        '// Asignar asterisco a la contraseña y ocultar el icono de ButtonHide
         TxtBox_Password.PasswordChar = "*"
         ButtonHidePass.Visible = False
         ButtonShowPass.Visible = True
     End Sub
 
     Private Sub ButtonShowPass_Click(sender As Object, e As EventArgs) Handles ButtonShowPass.Click
+        '// Quitar simbolos de la contraseña y ocultar el icono de ButtonShow
         TxtBox_Password.PasswordChar = ""
         ButtonHidePass.Visible = True
         ButtonShowPass.Visible = False

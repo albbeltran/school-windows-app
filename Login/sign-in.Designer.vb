@@ -28,7 +28,6 @@ Partial Class sign_in
         Me.LabelTitle = New System.Windows.Forms.Label()
         Me.ButtonMin = New System.Windows.Forms.Button()
         Me.ButtonClose = New System.Windows.Forms.Button()
-        Me.PictureBoxLogo = New System.Windows.Forms.PictureBox()
         Me.LabelUser = New System.Windows.Forms.Label()
         Me.LabelPassword = New System.Windows.Forms.Label()
         Me.CBox_User = New System.Windows.Forms.ComboBox()
@@ -37,13 +36,14 @@ Partial Class sign_in
         Me.PanelBottom = New System.Windows.Forms.Panel()
         Me.ButtonEnter = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ButtonHidePass = New System.Windows.Forms.Button()
-        Me.ButtonShowPass = New System.Windows.Forms.Button()
         Me.TimerOpen = New System.Windows.Forms.Timer(Me.components)
         Me.TimerClose = New System.Windows.Forms.Timer(Me.components)
+        Me.ButtonShowPass = New System.Windows.Forms.Button()
+        Me.ButtonHidePass = New System.Windows.Forms.Button()
+        Me.PictureBoxLogo = New System.Windows.Forms.PictureBox()
         Me.PanelTitle.SuspendLayout()
-        CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBottom.SuspendLayout()
+        CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelTitle
@@ -98,17 +98,6 @@ Partial Class sign_in
         Me.ButtonClose.TabIndex = 0
         Me.ButtonClose.Text = "X"
         Me.ButtonClose.UseVisualStyleBackColor = True
-        '
-        'PictureBoxLogo
-        '
-        Me.PictureBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBoxLogo.BackgroundImage = CType(resources.GetObject("PictureBoxLogo.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBoxLogo.Location = New System.Drawing.Point(113, 88)
-        Me.PictureBoxLogo.Name = "PictureBoxLogo"
-        Me.PictureBoxLogo.Size = New System.Drawing.Size(176, 182)
-        Me.PictureBoxLogo.TabIndex = 1
-        Me.PictureBoxLogo.TabStop = False
         '
         'LabelUser
         '
@@ -201,39 +190,6 @@ Partial Class sign_in
         Me.Label1.Text = "Sign In"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'ButtonHidePass
-        '
-        Me.ButtonHidePass.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonHidePass.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ButtonHidePass.DialogResult = System.Windows.Forms.DialogResult.Ignore
-        Me.ButtonHidePass.FlatAppearance.BorderSize = 0
-        Me.ButtonHidePass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.ButtonHidePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonHidePass.ForeColor = System.Drawing.Color.Black
-        Me.ButtonHidePass.Location = New System.Drawing.Point(312, 425)
-        Me.ButtonHidePass.Name = "ButtonHidePass"
-        Me.ButtonHidePass.Size = New System.Drawing.Size(27, 22)
-        Me.ButtonHidePass.TabIndex = 3
-        Me.ButtonHidePass.Text = "H"
-        Me.ButtonHidePass.UseVisualStyleBackColor = False
-        '
-        'ButtonShowPass
-        '
-        Me.ButtonShowPass.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonShowPass.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ButtonShowPass.DialogResult = System.Windows.Forms.DialogResult.Ignore
-        Me.ButtonShowPass.FlatAppearance.BorderSize = 0
-        Me.ButtonShowPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.ButtonShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonShowPass.ForeColor = System.Drawing.Color.Black
-        Me.ButtonShowPass.Location = New System.Drawing.Point(312, 425)
-        Me.ButtonShowPass.Name = "ButtonShowPass"
-        Me.ButtonShowPass.Size = New System.Drawing.Size(27, 22)
-        Me.ButtonShowPass.TabIndex = 16
-        Me.ButtonShowPass.Text = "SHOW"
-        Me.ButtonShowPass.UseVisualStyleBackColor = False
-        Me.ButtonShowPass.Visible = False
-        '
         'TimerOpen
         '
         Me.TimerOpen.Interval = 25
@@ -241,6 +197,52 @@ Partial Class sign_in
         'TimerClose
         '
         Me.TimerClose.Interval = 25
+        '
+        'ButtonShowPass
+        '
+        Me.ButtonShowPass.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonShowPass.BackColor = System.Drawing.Color.Transparent
+        Me.ButtonShowPass.BackgroundImage = Global.Requirements_Engineering.My.Resources.Resources.show_icon
+        Me.ButtonShowPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ButtonShowPass.DialogResult = System.Windows.Forms.DialogResult.Ignore
+        Me.ButtonShowPass.FlatAppearance.BorderSize = 0
+        Me.ButtonShowPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.ButtonShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonShowPass.ForeColor = System.Drawing.Color.Black
+        Me.ButtonShowPass.Location = New System.Drawing.Point(312, 428)
+        Me.ButtonShowPass.Name = "ButtonShowPass"
+        Me.ButtonShowPass.Size = New System.Drawing.Size(19, 16)
+        Me.ButtonShowPass.TabIndex = 16
+        Me.ButtonShowPass.UseVisualStyleBackColor = False
+        Me.ButtonShowPass.Visible = False
+        '
+        'ButtonHidePass
+        '
+        Me.ButtonHidePass.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonHidePass.BackColor = System.Drawing.Color.Transparent
+        Me.ButtonHidePass.BackgroundImage = Global.Requirements_Engineering.My.Resources.Resources.hide_icon
+        Me.ButtonHidePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ButtonHidePass.DialogResult = System.Windows.Forms.DialogResult.Ignore
+        Me.ButtonHidePass.FlatAppearance.BorderSize = 0
+        Me.ButtonHidePass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.ButtonHidePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonHidePass.ForeColor = System.Drawing.Color.Black
+        Me.ButtonHidePass.Location = New System.Drawing.Point(312, 428)
+        Me.ButtonHidePass.Name = "ButtonHidePass"
+        Me.ButtonHidePass.Size = New System.Drawing.Size(19, 16)
+        Me.ButtonHidePass.TabIndex = 3
+        Me.ButtonHidePass.UseVisualStyleBackColor = False
+        '
+        'PictureBoxLogo
+        '
+        Me.PictureBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBoxLogo.BackgroundImage = CType(resources.GetObject("PictureBoxLogo.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBoxLogo.Location = New System.Drawing.Point(113, 88)
+        Me.PictureBoxLogo.Name = "PictureBoxLogo"
+        Me.PictureBoxLogo.Size = New System.Drawing.Size(176, 182)
+        Me.PictureBoxLogo.TabIndex = 1
+        Me.PictureBoxLogo.TabStop = False
         '
         'sign_in
         '
@@ -264,8 +266,8 @@ Partial Class sign_in
         Me.Text = "sign_in"
         Me.PanelTitle.ResumeLayout(False)
         Me.PanelTitle.PerformLayout()
-        CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBottom.ResumeLayout(False)
+        CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

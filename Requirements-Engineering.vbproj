@@ -131,5 +131,14 @@
   <ItemGroup>
     <Folder Include="Main\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
