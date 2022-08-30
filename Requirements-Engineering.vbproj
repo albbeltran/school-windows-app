@@ -79,6 +79,12 @@
     <Compile Include="Login\sign-in.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Main\Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -106,6 +112,9 @@
     <EmbeddedResource Include="Login\sign-in.resx">
       <DependentUpon>sign-in.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -128,9 +137,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Main\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\show-icon.png" />
   </ItemGroup>

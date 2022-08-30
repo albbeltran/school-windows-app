@@ -87,8 +87,8 @@ Public Class sign_in
     Private Sub enter_process()
         If CBox_User.Text = "John Doe" And TxtBox_Password.Text = "quack20" Or CBox_User.Text = "Alex" And TxtBox_Password.Text = "quack10" Then
             Me.Hide()
-            Welcome.Show()
-
+            Welcome.ShowDialog()
+            Main.Show()
         Else
 
             MsgBox("Incorrect password/user, try again.", MsgBoxStyle.Critical, "Login")
@@ -140,7 +140,7 @@ Public Class sign_in
     Private Sub TimerClose_Tick(sender As Object, e As EventArgs) Handles TimerClose.Tick
         Me.Opacity -= 0.1
 
-        If Me.Opacity = 1 Then
+        If Me.Opacity = 0 Then
             TimerClose.Stop()
             Me.Close()
         End If

@@ -21,22 +21,6 @@ Public Class Welcome
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    '//**************************************************************
-    '// LIBRARIES AND EVENTS TO MOVE THE FORM
-    '//**************************************************************
-    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
-    Private Shared Sub ReleaseCapture()
-    End Sub
-
-    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
-    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
-    End Sub
-
-    Private Sub PanelTitle_MouseDown(sender As Object, e As MouseEventArgs) Handles PanelTitle.MouseDown
-        ReleaseCapture()
-        SendMessage(Me.Handle, &H112&, &HF012&, 0)
-    End Sub
-
     Private Sub ButtonEnter_Click(sender As Object, e As EventArgs) Handles ButtonEnter.Click
         MsgBox("The password is: " & sign_in.User_Password, MsgBoxStyle.OkOnly, "Welcome")
     End Sub
@@ -59,7 +43,7 @@ Public Class Welcome
     Private Sub TimerClose_Tick(sender As Object, e As EventArgs) Handles TimerClose.Tick
         Me.Opacity -= 0.1
 
-        If Me.Opacity = 1 Then
+        If Me.Opacity = 0 Then
             TimerClose.Stop()
             Me.Close()
         End If
