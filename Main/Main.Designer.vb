@@ -25,9 +25,13 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.PanelTitle = New System.Windows.Forms.Panel()
+        Me.ButtonRestore = New System.Windows.Forms.Button()
+        Me.ButtonMax = New System.Windows.Forms.Button()
         Me.ButtonMin = New System.Windows.Forms.Button()
         Me.ButtonClose = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LabelType = New System.Windows.Forms.Label()
+        Me.LabelName = New System.Windows.Forms.Label()
         Me.ButtonSignOut = New System.Windows.Forms.Button()
         Me.ButtonProducts = New System.Windows.Forms.Button()
         Me.ButtonSubjects = New System.Windows.Forms.Button()
@@ -35,11 +39,11 @@ Partial Class Main
         Me.ButtonHome = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBoxLogo = New System.Windows.Forms.PictureBox()
-        Me.LabelName = New System.Windows.Forms.Label()
-        Me.LabelType = New System.Windows.Forms.Label()
-        Me.ButtonMax = New System.Windows.Forms.Button()
         Me.TimerOpen = New System.Windows.Forms.Timer(Me.components)
         Me.TimerClose = New System.Windows.Forms.Timer(Me.components)
+        Me.LabelHour = New System.Windows.Forms.Label()
+        Me.LabelDate = New System.Windows.Forms.Label()
+        Me.TimerHour = New System.Windows.Forms.Timer(Me.components)
         Me.PanelTitle.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -49,6 +53,7 @@ Partial Class Main
         'PanelTitle
         '
         Me.PanelTitle.BackColor = System.Drawing.Color.Black
+        Me.PanelTitle.Controls.Add(Me.ButtonRestore)
         Me.PanelTitle.Controls.Add(Me.ButtonMax)
         Me.PanelTitle.Controls.Add(Me.ButtonMin)
         Me.PanelTitle.Controls.Add(Me.ButtonClose)
@@ -58,6 +63,37 @@ Partial Class Main
         Me.PanelTitle.Size = New System.Drawing.Size(800, 45)
         Me.PanelTitle.TabIndex = 2
         '
+        'ButtonRestore
+        '
+        Me.ButtonRestore.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonRestore.DialogResult = System.Windows.Forms.DialogResult.Ignore
+        Me.ButtonRestore.FlatAppearance.BorderSize = 0
+        Me.ButtonRestore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.ButtonRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonRestore.ForeColor = System.Drawing.Color.White
+        Me.ButtonRestore.Location = New System.Drawing.Point(710, 0)
+        Me.ButtonRestore.Name = "ButtonRestore"
+        Me.ButtonRestore.Size = New System.Drawing.Size(45, 45)
+        Me.ButtonRestore.TabIndex = 3
+        Me.ButtonRestore.Text = "R"
+        Me.ButtonRestore.UseVisualStyleBackColor = True
+        Me.ButtonRestore.Visible = False
+        '
+        'ButtonMax
+        '
+        Me.ButtonMax.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonMax.DialogResult = System.Windows.Forms.DialogResult.Ignore
+        Me.ButtonMax.FlatAppearance.BorderSize = 0
+        Me.ButtonMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.ButtonMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonMax.ForeColor = System.Drawing.Color.White
+        Me.ButtonMax.Location = New System.Drawing.Point(710, 0)
+        Me.ButtonMax.Name = "ButtonMax"
+        Me.ButtonMax.Size = New System.Drawing.Size(45, 45)
+        Me.ButtonMax.TabIndex = 2
+        Me.ButtonMax.Text = "+"
+        Me.ButtonMax.UseVisualStyleBackColor = True
+        '
         'ButtonMin
         '
         Me.ButtonMin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -66,7 +102,7 @@ Partial Class Main
         Me.ButtonMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.ButtonMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonMin.ForeColor = System.Drawing.Color.White
-        Me.ButtonMin.Location = New System.Drawing.Point(712, 0)
+        Me.ButtonMin.Location = New System.Drawing.Point(668, 0)
         Me.ButtonMin.Name = "ButtonMin"
         Me.ButtonMin.Size = New System.Drawing.Size(45, 45)
         Me.ButtonMin.TabIndex = 1
@@ -104,6 +140,30 @@ Partial Class Main
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 405)
         Me.Panel1.TabIndex = 3
+        '
+        'LabelType
+        '
+        Me.LabelType.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LabelType.AutoSize = True
+        Me.LabelType.Font = New System.Drawing.Font("Microsoft YaHei", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelType.ForeColor = System.Drawing.Color.Cyan
+        Me.LabelType.Location = New System.Drawing.Point(12, 327)
+        Me.LabelType.Name = "LabelType"
+        Me.LabelType.Size = New System.Drawing.Size(41, 20)
+        Me.LabelType.TabIndex = 7
+        Me.LabelType.Text = "Type"
+        '
+        'LabelName
+        '
+        Me.LabelName.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LabelName.AutoSize = True
+        Me.LabelName.Font = New System.Drawing.Font("Microsoft YaHei", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelName.ForeColor = System.Drawing.Color.Cyan
+        Me.LabelName.Location = New System.Drawing.Point(12, 301)
+        Me.LabelName.Name = "LabelName"
+        Me.LabelName.Size = New System.Drawing.Size(49, 20)
+        Me.LabelName.TabIndex = 6
+        Me.LabelName.Text = "Name"
         '
         'ButtonSignOut
         '
@@ -215,58 +275,48 @@ Partial Class Main
         Me.PictureBoxLogo.TabIndex = 2
         Me.PictureBoxLogo.TabStop = False
         '
-        'LabelName
-        '
-        Me.LabelName.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.LabelName.AutoSize = True
-        Me.LabelName.Font = New System.Drawing.Font("Microsoft YaHei", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelName.ForeColor = System.Drawing.Color.Cyan
-        Me.LabelName.Location = New System.Drawing.Point(12, 301)
-        Me.LabelName.Name = "LabelName"
-        Me.LabelName.Size = New System.Drawing.Size(49, 20)
-        Me.LabelName.TabIndex = 6
-        Me.LabelName.Text = "Name"
-        '
-        'LabelType
-        '
-        Me.LabelType.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.LabelType.AutoSize = True
-        Me.LabelType.Font = New System.Drawing.Font("Microsoft YaHei", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelType.ForeColor = System.Drawing.Color.Cyan
-        Me.LabelType.Location = New System.Drawing.Point(12, 327)
-        Me.LabelType.Name = "LabelType"
-        Me.LabelType.Size = New System.Drawing.Size(41, 20)
-        Me.LabelType.TabIndex = 7
-        Me.LabelType.Text = "Type"
-        '
-        'ButtonMax
-        '
-        Me.ButtonMax.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonMax.DialogResult = System.Windows.Forms.DialogResult.Ignore
-        Me.ButtonMax.FlatAppearance.BorderSize = 0
-        Me.ButtonMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.ButtonMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonMax.ForeColor = System.Drawing.Color.White
-        Me.ButtonMax.Location = New System.Drawing.Point(673, 3)
-        Me.ButtonMax.Name = "ButtonMax"
-        Me.ButtonMax.Size = New System.Drawing.Size(45, 45)
-        Me.ButtonMax.TabIndex = 2
-        Me.ButtonMax.Text = "+"
-        Me.ButtonMax.UseVisualStyleBackColor = True
-        '
         'TimerOpen
         '
-        Me.TimerOpen.Interval = 25
+        Me.TimerOpen.Interval = 15
         '
         'TimerClose
         '
         Me.TimerClose.Interval = 25
+        '
+        'LabelHour
+        '
+        Me.LabelHour.AutoSize = True
+        Me.LabelHour.Font = New System.Drawing.Font("Microsoft YaHei", 16.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelHour.ForeColor = System.Drawing.Color.DarkCyan
+        Me.LabelHour.Location = New System.Drawing.Point(446, 199)
+        Me.LabelHour.Name = "LabelHour"
+        Me.LabelHour.Size = New System.Drawing.Size(125, 36)
+        Me.LabelHour.TabIndex = 8
+        Me.LabelHour.Text = "00:00:00"
+        '
+        'LabelDate
+        '
+        Me.LabelDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LabelDate.AutoSize = True
+        Me.LabelDate.Font = New System.Drawing.Font("Microsoft YaHei", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelDate.ForeColor = System.Drawing.Color.DarkCyan
+        Me.LabelDate.Location = New System.Drawing.Point(394, 244)
+        Me.LabelDate.Name = "LabelDate"
+        Me.LabelDate.Size = New System.Drawing.Size(217, 23)
+        Me.LabelDate.TabIndex = 9
+        Me.LabelDate.Text = "Tuesday, August 30, 2022"
+        '
+        'TimerHour
+        '
+        Me.TimerHour.Enabled = True
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.LabelDate)
+        Me.Controls.Add(Me.LabelHour)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelTitle)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -279,6 +329,7 @@ Partial Class Main
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -298,4 +349,8 @@ Partial Class Main
     Friend WithEvents ButtonMax As Button
     Friend WithEvents TimerOpen As Timer
     Friend WithEvents TimerClose As Timer
+    Friend WithEvents ButtonRestore As Button
+    Friend WithEvents LabelHour As Label
+    Friend WithEvents LabelDate As Label
+    Friend WithEvents TimerHour As Timer
 End Class
