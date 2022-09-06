@@ -30,6 +30,7 @@ Partial Class Main
         Me.ButtonMin = New System.Windows.Forms.Button()
         Me.ButtonClose = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.LabelType = New System.Windows.Forms.Label()
         Me.LabelName = New System.Windows.Forms.Label()
         Me.ButtonSignOut = New System.Windows.Forms.Button()
@@ -44,6 +45,7 @@ Partial Class Main
         Me.LabelHour = New System.Windows.Forms.Label()
         Me.LabelDate = New System.Windows.Forms.Label()
         Me.TimerHour = New System.Windows.Forms.Timer(Me.components)
+        Me.PanelContainer = New System.Windows.Forms.Panel()
         Me.PanelTitle.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -127,6 +129,7 @@ Partial Class Main
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Black
+        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.LabelType)
         Me.Panel1.Controls.Add(Me.LabelName)
         Me.Panel1.Controls.Add(Me.ButtonSignOut)
@@ -140,6 +143,15 @@ Partial Class Main
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 405)
         Me.Panel1.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(142, 119)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Label1"
         '
         'LabelType
         '
@@ -310,6 +322,13 @@ Partial Class Main
         '
         Me.TimerHour.Enabled = True
         '
+        'PanelContainer
+        '
+        Me.PanelContainer.Location = New System.Drawing.Point(199, 45)
+        Me.PanelContainer.Name = "PanelContainer"
+        Me.PanelContainer.Size = New System.Drawing.Size(601, 405)
+        Me.PanelContainer.TabIndex = 10
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -319,6 +338,7 @@ Partial Class Main
         Me.Controls.Add(Me.LabelHour)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelTitle)
+        Me.Controls.Add(Me.PanelContainer)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -353,4 +373,6 @@ Partial Class Main
     Friend WithEvents LabelHour As Label
     Friend WithEvents LabelDate As Label
     Friend WithEvents TimerHour As Timer
+    Friend WithEvents PanelContainer As Panel
+    Friend WithEvents Label1 As Label
 End Class

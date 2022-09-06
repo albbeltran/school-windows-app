@@ -12,3 +12,5 @@ C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements-Engi
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.sign_in.resources
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Welcome.resources
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Main.resources
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Students.resources
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Subjects.resources

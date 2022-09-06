@@ -1,3 +1,3 @@
-﻿Public Class subjects
+﻿Public Class Subjects
 
 End Class

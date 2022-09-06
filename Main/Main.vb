@@ -8,6 +8,8 @@ Public Class Main
 
         ButtonHome.FlatAppearance.BorderSize = 2
         ButtonHome.FlatAppearance.BorderColor = Color.Aqua
+
+        Max()
     End Sub
 
 
@@ -84,5 +86,60 @@ Public Class Main
     Private Sub TimerHour_Tick(sender As Object, e As EventArgs) Handles TimerHour.Tick
         LabelHour.Text = DateTime.Now.ToString("HH:mm:ss")
         LabelDate.Text = DateTime.Now.ToLongDateString
+    End Sub
+
+    Dim ActiveForm As Form = Nothing
+
+    Sub Open_Form_Panel_Container(ByVal ChildForm As Form)
+
+        If ActiveForm IsNot Nothing Then
+            ActiveForm.Close()
+        End If
+
+        ActiveForm = ChildForm '// Secondary form becomes the active
+        ChildForm.TopLevel = False
+        ChildForm.FormBorderStyle = FormBorderStyle.None
+        ChildForm.Dock = DockStyle.Fill '// Take the size of the parent container
+        PanelContainer.Controls.Add(ChildForm) '// Add the selected form to the panel
+        PanelContainer.Tag = ChildForm '// Allows interaction
+        ChildForm.BringToFront() '// Send the selected form to the center
+        ChildForm.Show()
+    End Sub
+
+    Private Sub ButtonStudents_Click(sender As Object, e As EventArgs) Handles ButtonStudents.Click
+        BackOriginalColors()
+        Open_Form_Panel_Container(New Students)
+        ButtonStudents.FlatAppearance.BorderSize = 1
+        ButtonStudents.FlatAppearance.BorderColor = Color.Aqua
+    End Sub
+
+    Private Sub ButtonSubjects_Click(sender As Object, e As EventArgs) Handles ButtonSubjects.Click
+        BackOriginalColors()
+        Open_Form_Panel_Container(New Subjects)
+        ButtonSubjects.FlatAppearance.BorderSize = 1
+        ButtonSubjects.FlatAppearance.BorderColor = Color.Aqua
+    End Sub
+
+    Private Sub ButtonHome_Click(sender As Object, e As EventArgs) Handles ButtonHome.Click
+        BackOriginalColors()
+        ButtonHome.FlatAppearance.BorderSize = 2
+        ButtonHome.FlatAppearance.BorderColor = Color.Aqua
+
+        If ActiveForm IsNot Nothing Then
+            ActiveForm.Close()
+        End If
+    End Sub
+
+    Private Sub BackOriginalColors()
+        ButtonHome.FlatAppearance.BorderSize = 0
+        ButtonStudents.FlatAppearance.BorderSize = 0
+        ButtonSubjects.FlatAppearance.BorderSize = 0
+        ButtonProducts.FlatAppearance.BorderSize = 0
+    End Sub
+
+    Private Sub ButtonProducts_Click(sender As Object, e As EventArgs) Handles ButtonProducts.Click
+        BackOriginalColors()
+        ButtonProducts.FlatAppearance.BorderSize = 2
+        ButtonProducts.FlatAppearance.BorderColor = Color.Aqua
     End Sub
 End Class
