@@ -145,4 +145,9 @@ Public Class sign_in
             Me.Close()
         End If
     End Sub
+
+    Private Sub LinkLabel_Recover_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel_Recover.LinkClicked
+        Me.Hide()
+        RecoverPassword.Show()
+    End Sub
 End Class

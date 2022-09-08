@@ -55,7 +55,7 @@ Partial Class sign_in
         Me.PanelTitle.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelTitle.Location = New System.Drawing.Point(0, 0)
         Me.PanelTitle.Name = "PanelTitle"
-        Me.PanelTitle.Size = New System.Drawing.Size(400, 45)
+        Me.PanelTitle.Size = New System.Drawing.Size(409, 45)
         Me.PanelTitle.TabIndex = 0
         '
         'LabelTitle
@@ -77,7 +77,7 @@ Partial Class sign_in
         Me.ButtonMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.ButtonMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonMin.ForeColor = System.Drawing.Color.White
-        Me.ButtonMin.Location = New System.Drawing.Point(312, 0)
+        Me.ButtonMin.Location = New System.Drawing.Point(321, 0)
         Me.ButtonMin.Name = "ButtonMin"
         Me.ButtonMin.Size = New System.Drawing.Size(45, 45)
         Me.ButtonMin.TabIndex = 1
@@ -92,7 +92,7 @@ Partial Class sign_in
         Me.ButtonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed
         Me.ButtonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonClose.ForeColor = System.Drawing.Color.White
-        Me.ButtonClose.Location = New System.Drawing.Point(355, 0)
+        Me.ButtonClose.Location = New System.Drawing.Point(364, 0)
         Me.ButtonClose.Name = "ButtonClose"
         Me.ButtonClose.Size = New System.Drawing.Size(45, 45)
         Me.ButtonClose.TabIndex = 0
@@ -160,7 +160,7 @@ Partial Class sign_in
         Me.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelBottom.Location = New System.Drawing.Point(0, 730)
         Me.PanelBottom.Name = "PanelBottom"
-        Me.PanelBottom.Size = New System.Drawing.Size(400, 70)
+        Me.PanelBottom.Size = New System.Drawing.Size(409, 70)
         Me.PanelBottom.TabIndex = 8
         '
         'ButtonEnter
@@ -209,7 +209,7 @@ Partial Class sign_in
         Me.ButtonShowPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.ButtonShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonShowPass.ForeColor = System.Drawing.Color.Black
-        Me.ButtonShowPass.Location = New System.Drawing.Point(312, 428)
+        Me.ButtonShowPass.Location = New System.Drawing.Point(321, 428)
         Me.ButtonShowPass.Name = "ButtonShowPass"
         Me.ButtonShowPass.Size = New System.Drawing.Size(19, 16)
         Me.ButtonShowPass.TabIndex = 16
@@ -227,7 +227,7 @@ Partial Class sign_in
         Me.ButtonHidePass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.ButtonHidePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonHidePass.ForeColor = System.Drawing.Color.Black
-        Me.ButtonHidePass.Location = New System.Drawing.Point(312, 428)
+        Me.ButtonHidePass.Location = New System.Drawing.Point(321, 428)
         Me.ButtonHidePass.Name = "ButtonHidePass"
         Me.ButtonHidePass.Size = New System.Drawing.Size(19, 16)
         Me.ButtonHidePass.TabIndex = 3
@@ -238,7 +238,7 @@ Partial Class sign_in
         Me.PictureBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBoxLogo.BackgroundImage = CType(resources.GetObject("PictureBoxLogo.BackgroundImage"), System.Drawing.Image)
         Me.PictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBoxLogo.Location = New System.Drawing.Point(113, 88)
+        Me.PictureBoxLogo.Location = New System.Drawing.Point(117, 88)
         Me.PictureBoxLogo.Name = "PictureBoxLogo"
         Me.PictureBoxLogo.Size = New System.Drawing.Size(176, 182)
         Me.PictureBoxLogo.TabIndex = 1
@@ -249,7 +249,7 @@ Partial Class sign_in
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(400, 800)
+        Me.ClientSize = New System.Drawing.Size(409, 800)
         Me.Controls.Add(Me.ButtonShowPass)
         Me.Controls.Add(Me.ButtonHidePass)
         Me.Controls.Add(Me.Label1)

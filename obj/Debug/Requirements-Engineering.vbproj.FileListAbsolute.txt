@@ -14,3 +14,4 @@ C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engi
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Main.resources
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Students.resources
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Subjects.resources
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.RecoverPassword.resources
