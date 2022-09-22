@@ -19,6 +19,7 @@ Public Class sign_in
     End Sub
 
     Private Sub sign_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Link()
         CBox_User.Text = "Select User"
         CBox_User.SelectedIndex = 0
         If CBox_User.Text = "Alex" Then

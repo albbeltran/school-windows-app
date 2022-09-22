@@ -40,8 +40,10 @@ Partial Class Subjects
         Me.Description = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Faculty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelBottom = New System.Windows.Forms.Panel()
-        Me.ButtonEnter = New System.Windows.Forms.Button()
+        Me.ButtonDelete = New System.Windows.Forms.Button()
         Me.ButtonClear = New System.Windows.Forms.Button()
+        Me.ButtonEnter = New System.Windows.Forms.Button()
+        Me.TxtTotal = New System.Windows.Forms.TextBox()
         CType(Me.GridSubjects, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBottom.SuspendLayout()
         Me.SuspendLayout()
@@ -156,17 +158,18 @@ Partial Class Subjects
         '
         'GridSubjects
         '
+        Me.GridSubjects.AllowUserToAddRows = False
         Me.GridSubjects.BackgroundColor = System.Drawing.SystemColors.Control
         Me.GridSubjects.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.GridSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridSubjects.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Name, Me.Semester, Me.Description, Me.Faculty})
-        Me.GridSubjects.Location = New System.Drawing.Point(61, 234)
+        Me.GridSubjects.Location = New System.Drawing.Point(61, 265)
         Me.GridSubjects.Name = "GridSubjects"
         Me.GridSubjects.ReadOnly = True
         Me.GridSubjects.RowHeadersWidth = 51
         Me.GridSubjects.RowTemplate.Height = 24
         Me.GridSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.GridSubjects.Size = New System.Drawing.Size(868, 216)
+        Me.GridSubjects.Size = New System.Drawing.Size(868, 185)
         Me.GridSubjects.TabIndex = 13
         '
         'ID
@@ -212,6 +215,7 @@ Partial Class Subjects
         'PanelBottom
         '
         Me.PanelBottom.BackColor = System.Drawing.Color.Black
+        Me.PanelBottom.Controls.Add(Me.ButtonDelete)
         Me.PanelBottom.Controls.Add(Me.ButtonClear)
         Me.PanelBottom.Controls.Add(Me.ButtonEnter)
         Me.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -220,19 +224,19 @@ Partial Class Subjects
         Me.PanelBottom.Size = New System.Drawing.Size(982, 70)
         Me.PanelBottom.TabIndex = 14
         '
-        'ButtonEnter
+        'ButtonDelete
         '
-        Me.ButtonEnter.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ButtonEnter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
-        Me.ButtonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
-        Me.ButtonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEnter.ForeColor = System.Drawing.Color.White
-        Me.ButtonEnter.Location = New System.Drawing.Point(842, 13)
-        Me.ButtonEnter.Name = "ButtonEnter"
-        Me.ButtonEnter.Size = New System.Drawing.Size(109, 45)
-        Me.ButtonEnter.TabIndex = 0
-        Me.ButtonEnter.Text = "Enter"
-        Me.ButtonEnter.UseVisualStyleBackColor = True
+        Me.ButtonDelete.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ButtonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
+        Me.ButtonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.ButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonDelete.ForeColor = System.Drawing.Color.White
+        Me.ButtonDelete.Location = New System.Drawing.Point(581, 13)
+        Me.ButtonDelete.Name = "ButtonDelete"
+        Me.ButtonDelete.Size = New System.Drawing.Size(109, 45)
+        Me.ButtonDelete.TabIndex = 2
+        Me.ButtonDelete.Text = "Delete"
+        Me.ButtonDelete.UseVisualStyleBackColor = True
         '
         'ButtonClear
         '
@@ -248,11 +252,34 @@ Partial Class Subjects
         Me.ButtonClear.Text = "Enter"
         Me.ButtonClear.UseVisualStyleBackColor = True
         '
+        'ButtonEnter
+        '
+        Me.ButtonEnter.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ButtonEnter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
+        Me.ButtonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.ButtonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEnter.ForeColor = System.Drawing.Color.White
+        Me.ButtonEnter.Location = New System.Drawing.Point(842, 13)
+        Me.ButtonEnter.Name = "ButtonEnter"
+        Me.ButtonEnter.Size = New System.Drawing.Size(109, 45)
+        Me.ButtonEnter.TabIndex = 0
+        Me.ButtonEnter.Text = "Enter"
+        Me.ButtonEnter.UseVisualStyleBackColor = True
+        '
+        'TxtTotal
+        '
+        Me.TxtTotal.Location = New System.Drawing.Point(59, 223)
+        Me.TxtTotal.Name = "TxtTotal"
+        Me.TxtTotal.Size = New System.Drawing.Size(91, 22)
+        Me.TxtTotal.TabIndex = 15
+        Me.TxtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Subjects
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(982, 553)
+        Me.Controls.Add(Me.TxtTotal)
         Me.Controls.Add(Me.PanelBottom)
         Me.Controls.Add(Me.GridSubjects)
         Me.Controls.Add(Me.CBoxFaculty)
@@ -296,4 +323,6 @@ Partial Class Subjects
     Friend WithEvents Description As DataGridViewTextBoxColumn
     Friend WithEvents Faculty As DataGridViewTextBoxColumn
     Friend WithEvents ButtonClear As Button
+    Friend WithEvents ButtonDelete As Button
+    Friend WithEvents TxtTotal As TextBox
 End Class

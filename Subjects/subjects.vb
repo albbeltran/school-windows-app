@@ -8,8 +8,8 @@
             If TxtID.Text = Nothing Or
                 TxtName.Text = Nothing Or
                 TxtDescription.Text = Nothing Or
-                CBoxSemester.Text = "Select your semester" Or
-                CBoxFaculty.Text = "Select your faculty" Then
+                CBoxSemester.Text = "Select Semester" Or
+                CBoxFaculty.Text = "Select Faculty" Then
 
                 MsgBox("There are empty fields!", MsgBoxStyle.Critical, "Subjects")
 
@@ -37,12 +37,31 @@
         TxtID.Clear()
         TxtName.Clear()
         TxtDescription.Clear()
-        CBoxSemester.Text = "Select your semester"
-        CBoxFaculty.Text = "Select your faculty"
+        CBoxSemester.Text = "Select Semester"
+        CBoxFaculty.Text = "Select Faculty"
         GridSubjects.ClearSelection()
+        TxtTotal.Text = GridSubjects.Rows.Count
     End Sub
 
     Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click
         Clear_Values()
+    End Sub
+
+    Private Sub ButtonDelete_Click(sender As Object, e As EventArgs) Handles ButtonDelete.Click
+        Try
+
+            If GridSubjects.SelectedRows.Count = 0 Then
+
+                MsgBox("There is no selected row!", MsgBoxStyle.Critical, "Subjects")
+
+            Else
+                GridSubjects.Rows.Remove(GridSubjects.CurrentRow)
+            End If
+
+        Catch ex As Exception
+
+            MsgBox("Error! " & ex.Message, MsgBoxStyle.Critical)
+
+        End Try
     End Sub
 End Class

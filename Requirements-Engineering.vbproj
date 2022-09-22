@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connections\Connection_Base.vb" />
     <Compile Include="Login\sign-in.Designer.vb">
       <DependentUpon>sign-in.vb</DependentUpon>
     </Compile>
