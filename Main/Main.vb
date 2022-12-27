@@ -4,7 +4,7 @@ Imports System.Runtime.InteropServices
 Public Class Main
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelName.Text = sign_in.User_Name
-        LabelType.Text = sign_in.User_Type
+        LabelEmail.Text = sign_in.User_Email
 
         ButtonHome.FlatAppearance.BorderSize = 2
         ButtonHome.FlatAppearance.BorderColor = Color.Aqua
@@ -79,7 +79,7 @@ Public Class Main
 
         If Me.Opacity = 0 Then
             TimerClose.Stop()
-            Me.Close()
+            Application.Exit()
         End If
     End Sub
 
@@ -106,24 +106,12 @@ Public Class Main
         ChildForm.Show()
     End Sub
 
-    Private Sub ButtonStudents_Click(sender As Object, e As EventArgs) Handles ButtonStudents.Click
-        BackOriginalColors()
-        Open_Form_Panel_Container(New Students)
-        ButtonStudents.FlatAppearance.BorderSize = 1
-        ButtonStudents.FlatAppearance.BorderColor = Color.Aqua
-    End Sub
-
-    Private Sub ButtonSubjects_Click(sender As Object, e As EventArgs) Handles ButtonSubjects.Click
-        BackOriginalColors()
-        Open_Form_Panel_Container(New Subjects)
-        ButtonSubjects.FlatAppearance.BorderSize = 1
-        ButtonSubjects.FlatAppearance.BorderColor = Color.Aqua
-    End Sub
-
     Private Sub ButtonHome_Click(sender As Object, e As EventArgs) Handles ButtonHome.Click
         BackOriginalColors()
         ButtonHome.FlatAppearance.BorderSize = 2
         ButtonHome.FlatAppearance.BorderColor = Color.Aqua
+        LabelHour.Visible = True
+        LabelDate.Visible = True
 
         If ActiveForm IsNot Nothing Then
             ActiveForm.Close()
@@ -139,7 +127,37 @@ Public Class Main
 
     Private Sub ButtonProducts_Click(sender As Object, e As EventArgs) Handles ButtonProducts.Click
         BackOriginalColors()
+        Open_Form_Panel_Container(New Products)
         ButtonProducts.FlatAppearance.BorderSize = 2
         ButtonProducts.FlatAppearance.BorderColor = Color.Aqua
+        LabelHour.Visible = False
+        LabelDate.Visible = False
+    End Sub
+
+    Private Sub ButtonStudents_Click(sender As Object, e As EventArgs) Handles ButtonStudents.Click
+        BackOriginalColors()
+        Open_Form_Panel_Container(New Students)
+        ButtonStudents.FlatAppearance.BorderSize = 1
+        ButtonStudents.FlatAppearance.BorderColor = Color.Aqua
+        LabelHour.Visible = False
+        LabelDate.Visible = False
+    End Sub
+
+    Private Sub ButtonSubjects_Click(sender As Object, e As EventArgs) Handles ButtonSubjects.Click
+        BackOriginalColors()
+        Open_Form_Panel_Container(New Subjects)
+        ButtonSubjects.FlatAppearance.BorderSize = 1
+        ButtonSubjects.FlatAppearance.BorderColor = Color.Aqua
+        LabelHour.Visible = False
+        LabelDate.Visible = False
+    End Sub
+
+    Private Sub ButtonTeachers_Click(sender As Object, e As EventArgs) Handles ButtonTeachers.Click
+        BackOriginalColors()
+        Open_Form_Panel_Container(New Teachers)
+        ButtonProducts.FlatAppearance.BorderSize = 2
+        ButtonProducts.FlatAppearance.BorderColor = Color.Aqua
+        LabelHour.Visible = False
+        LabelDate.Visible = False
     End Sub
 End Class

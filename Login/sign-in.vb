@@ -1,14 +1,17 @@
 ﻿'-------LIBRARIES OR DLL---------
 Imports System.Runtime.InteropServices
+Imports System.Data.OleDb
+Imports System.Data
 
 Public Class sign_in
     '// PUBLIC AND PRIVATE VARIABLES
 
     Public User_Name As String
     Public User_Email As String
-    Public User_Type As String
-    Public User_Password As String
-    Public User_Exp As Double
+    Public User_Age As Double
+    Public User_Key As String
+    Public User_Gender As String
+    Public User_Sector As String
 
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
         TimerClose.Start()
@@ -20,13 +23,16 @@ Public Class sign_in
 
     Private Sub sign_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Link()
+        Load_Users()
         CBox_User.Text = "Select User"
         CBox_User.SelectedIndex = 0
-        If CBox_User.Text = "Alex" Then
-            TxtBox_Password.Text = User_Password
-        ElseIf CBox_User.Text = "John Doe" Then
-            TxtBox_Password.Text = User_Password
-        End If
+
+        'If CBox_User.Text = "Alex" Then
+        '   TxtBox_Password.Text = User_Password
+        'ElseIf CBox_User.Text = "John Doe" Then
+        '   TxtBox_Password.Text = User_Password
+        'End If
+
         Me.Opacity = 0
         TimerOpen.Start()
     End Sub
@@ -36,27 +42,30 @@ Public Class sign_in
     End Sub
 
     Private Sub CBoxUser_IndexChanged(sender As Object, e As EventArgs) Handles CBox_User.SelectedIndexChanged
-        User_Name = CBox_User.Text
 
-        If User_Name = "John Doe" Then
+        Load_User_Data()
 
-            User_Email = "johndoe@gmail.com"
-            User_Type = "Admin"
-            User_Exp = "268986"
+        'User_Name = CBox_User.Text
 
-        ElseIf User_Name = "Alex" Then
+        'If User_Name = "John Doe" Then
 
-            User_Email = "alex@gmail.com"
-            User_Type = "User"
-            User_Exp = "318035"
+        '   User_Email = "johndoe@gmail.com"
+        '   User_Type = "Admin"
+        '   User_Exp = "268986"
 
-        End If
+        'ElseIf User_Name = "Alex" Then
 
-        If User_Name = "Alex" Then
-            User_Password = "quack10"
-        ElseIf CBox_User.Text = "John Doe" Then
-            User_Password = "quack20"
-        End If
+        '   User_Email = "alex@gmail.com"
+        '   User_Type = "User"
+        '   User_Exp = "318035"
+
+        'End If
+
+        'If User_Name = "Alex" Then
+        '   User_Password = "quack10"
+        'ElseIf CBox_User.Text = "John Doe" Then
+        '   User_Password = "quack20"
+        'End If
     End Sub
 
     Private Sub ButtonHidePass_Click(sender As Object, e As EventArgs) Handles ButtonHidePass.Click
@@ -86,20 +95,50 @@ Public Class sign_in
     '// PUBLIC AND PRIVATE PROCESS
 
     Private Sub enter_process()
-        If CBox_User.Text = "John Doe" And TxtBox_Password.Text = "quack20" Or CBox_User.Text = "Alex" And TxtBox_Password.Text = "quack10" Then
-            Me.Hide()
-            Welcome.ShowDialog()
-            Main.Show()
-        Else
+        '77 If CBox_User.Text = "John Doe" And TxtBox_Password.Text = "quack20" Or CBox_User.Text = "Alex" And TxtBox_Password.Text = "quack10" Then
+        '   Me.Hide()
+        '   Welcome.ShowDialog()
+        '   Main.Show()
+        'Else
 
-            MsgBox("Incorrect password/user, try again.", MsgBoxStyle.Critical, "Login")
-            TxtBox_Password.Clear()
-            TxtBox_Password.Focus()
-        End If
+        '   MsgBox("Incorrect password/user, try again.", MsgBoxStyle.Critical, "Login")
+        '   TxtBox_Password.Clear()
+        '   TxtBox_Password.Focus()
+        'End If
+
+        Login()
 
         '// Error message structure on emergent window
         '// MSGBOX, message, window styles, window title 
         '// Styles: critical, okonly, yes/no
+    End Sub
+
+    Private Sub Login()
+        Try
+            Dim SQLQuery As String
+            Dim Adapter As New OleDbDataAdapter
+            Dim Command As New OleDb.OleDbCommand
+            Dim Reader As OleDb.OleDbDataReader
+
+            SQLQuery = "SELECT * FROM Usuarios WHERE Nombre ='" & CBox_User.Text & "' AND Clave = '" & TxtBox_Password.Text & "'"
+            Command = New OleDb.OleDbCommand(SQLQuery, connection)
+            Adapter.SelectCommand = Command
+            Reader = Command.ExecuteReader
+
+            If Reader.Read = True Then
+                Me.Hide()
+                Welcome.ShowDialog()
+                Main.Show()
+            Else
+                MsgBox("Incorrect password, try again ", MsgBoxStyle.Critical, "Login")
+                TxtBox_Password.Clear()
+            End If
+
+        Catch ex As Exception
+
+            MsgBox("Error! " & ex.Message, MsgBoxStyle.Critical)
+
+        End Try
     End Sub
 
     '//**************************************************************
@@ -151,4 +190,61 @@ Public Class sign_in
         Me.Hide()
         RecoverPassword.Show()
     End Sub
+
+    Private Sub Load_Users()
+        Try
+            Dim Table As New DataTable
+            Dim SQLQuery As String = "SELECT Nombre FROM Usuarios"
+            Dim Adaptador As New OleDbDataAdapter(SQLQuery, connection)
+            Adaptador.Fill(Table)
+
+            CBox_User.DataSource = Table
+            CBox_User.DisplayMember = "Nombre"
+        Catch ex As Exception
+
+            MsgBox("Error! " & ex.Message, MsgBoxStyle.Critical)
+
+        End Try
+    End Sub
+
+    '----------------------------------------------------------------------------
+    '----------------------------PROCESS TO LOAD USER DATA ----------------------
+    '----------------------------------------------------------------------------
+
+    Private Sub Load_User_Data()
+        Try
+
+            Dim SQLQuery As String
+            Dim Adapter As OleDbDataAdapter
+            Dim Register As DataSet
+            Dim List As Long
+
+            SQLQuery = "SELECT Nombre, Clave, Correo, Edad, Genero, Sector FROM Usuarios WHERE Nombre = '" & CBox_User.Text & "'"
+            Adapter = New OleDbDataAdapter(SQLQuery, connection)
+            Register = New DataSet
+
+            Adapter.Fill(Register, "Usuarios")
+            List = Register.Tables("Usuarios").Rows.Count
+
+            If List <> 0 Then
+
+                User_Name = Register.Tables("Usuarios").Rows(0).Item("Nombre")
+                User_Gender = Register.Tables("Usuarios").Rows(0).Item("Genero")
+                User_Age = Register.Tables("Usuarios").Rows(0).Item("Edad")
+                User_Sector = Register.Tables("Usuarios").Rows(0).Item("Sector")
+                User_Key = Register.Tables("Usuarios").Rows(0).Item("Clave")
+                User_Email = Register.Tables("Usuarios").Rows(0).Item("Correo")
+
+            Else
+
+            End If
+
+
+        Catch ex As Exception
+
+            MsgBox("Error! " & ex.Message, MsgBoxStyle.Critical)
+
+        End Try
+    End Sub
+
 End Class

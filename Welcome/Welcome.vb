@@ -5,8 +5,9 @@ Public Class Welcome
     Private Sub Welcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelName.Text = sign_in.User_Name
         LabelEmail.Text = sign_in.User_Email
-        LabelType.Text = sign_in.User_Type
-        LabelExp.Text = sign_in.User_Exp
+        LabelAge.Text = sign_in.User_Age
+        LabelSector.Text = sign_in.User_Sector
+        LabelGender.Text = sign_in.User_Gender
 
         Me.Opacity = 0
         ProgressBar.Value = 0
@@ -22,7 +23,7 @@ Public Class Welcome
     End Sub
 
     Private Sub ButtonEnter_Click(sender As Object, e As EventArgs) Handles ButtonEnter.Click
-        MsgBox("The password is: " & sign_in.User_Password, MsgBoxStyle.OkOnly, "Welcome")
+        MsgBox("The password is: " & sign_in.User_Key, MsgBoxStyle.OkOnly, "Welcome")
     End Sub
 
     Private Sub TimerOpen_Tick(sender As Object, e As EventArgs) Handles TimerOpen.Tick

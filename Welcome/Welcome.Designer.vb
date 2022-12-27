@@ -31,13 +31,15 @@ Partial Class Welcome
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LabelName = New System.Windows.Forms.Label()
         Me.LabelEmail = New System.Windows.Forms.Label()
-        Me.LabelExp = New System.Windows.Forms.Label()
         Me.PanelBottom = New System.Windows.Forms.Panel()
         Me.ButtonEnter = New System.Windows.Forms.Button()
         Me.ProgressBar = New System.Windows.Forms.ProgressBar()
         Me.TimerOpen = New System.Windows.Forms.Timer(Me.components)
         Me.TimerClose = New System.Windows.Forms.Timer(Me.components)
         Me.LabelLoading = New System.Windows.Forms.Label()
+        Me.LabelAge = New System.Windows.Forms.Label()
+        Me.LabelGender = New System.Windows.Forms.Label()
+        Me.LabelSector = New System.Windows.Forms.Label()
         Me.PanelTitle.SuspendLayout()
         Me.PanelBottom.SuspendLayout()
         Me.SuspendLayout()
@@ -151,25 +153,14 @@ Partial Class Welcome
         Me.LabelEmail.Text = "Email"
         Me.LabelEmail.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'LabelExp
-        '
-        Me.LabelExp.AutoSize = True
-        Me.LabelExp.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelExp.ForeColor = System.Drawing.Color.White
-        Me.LabelExp.Location = New System.Drawing.Point(77, 13)
-        Me.LabelExp.Name = "LabelExp"
-        Me.LabelExp.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LabelExp.Size = New System.Drawing.Size(89, 17)
-        Me.LabelExp.TabIndex = 8
-        Me.LabelExp.Text = "Expediente"
-        Me.LabelExp.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'PanelBottom
         '
         Me.PanelBottom.BackColor = System.Drawing.Color.Black
+        Me.PanelBottom.Controls.Add(Me.LabelSector)
+        Me.PanelBottom.Controls.Add(Me.LabelGender)
+        Me.PanelBottom.Controls.Add(Me.LabelAge)
         Me.PanelBottom.Controls.Add(Me.ButtonEnter)
         Me.PanelBottom.Controls.Add(Me.LabelName)
-        Me.PanelBottom.Controls.Add(Me.LabelExp)
         Me.PanelBottom.Controls.Add(Me.LabelEmail)
         Me.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelBottom.Location = New System.Drawing.Point(0, 380)
@@ -221,6 +212,48 @@ Partial Class Welcome
         Me.LabelLoading.Text = "10"
         Me.LabelLoading.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'LabelAge
+        '
+        Me.LabelAge.AutoSize = True
+        Me.LabelAge.BackColor = System.Drawing.Color.Transparent
+        Me.LabelAge.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelAge.ForeColor = System.Drawing.Color.White
+        Me.LabelAge.Location = New System.Drawing.Point(197, 13)
+        Me.LabelAge.Name = "LabelAge"
+        Me.LabelAge.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelAge.Size = New System.Drawing.Size(37, 17)
+        Me.LabelAge.TabIndex = 8
+        Me.LabelAge.Text = "Age"
+        Me.LabelAge.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'LabelGender
+        '
+        Me.LabelGender.AutoSize = True
+        Me.LabelGender.BackColor = System.Drawing.Color.Transparent
+        Me.LabelGender.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelGender.ForeColor = System.Drawing.Color.White
+        Me.LabelGender.Location = New System.Drawing.Point(108, 44)
+        Me.LabelGender.Name = "LabelGender"
+        Me.LabelGender.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelGender.Size = New System.Drawing.Size(63, 17)
+        Me.LabelGender.TabIndex = 9
+        Me.LabelGender.Text = "Gender"
+        Me.LabelGender.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'LabelSector
+        '
+        Me.LabelSector.AutoSize = True
+        Me.LabelSector.BackColor = System.Drawing.Color.Transparent
+        Me.LabelSector.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSector.ForeColor = System.Drawing.Color.White
+        Me.LabelSector.Location = New System.Drawing.Point(108, 13)
+        Me.LabelSector.Name = "LabelSector"
+        Me.LabelSector.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LabelSector.Size = New System.Drawing.Size(57, 17)
+        Me.LabelSector.TabIndex = 10
+        Me.LabelSector.Text = "Sector"
+        Me.LabelSector.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'Welcome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -252,7 +285,6 @@ Partial Class Welcome
     Friend WithEvents Label1 As Label
     Friend WithEvents LabelName As Label
     Friend WithEvents LabelEmail As Label
-    Friend WithEvents LabelExp As Label
     Friend WithEvents LabelType As Label
     Friend WithEvents PanelBottom As Panel
     Friend WithEvents ButtonEnter As Button
@@ -260,4 +292,7 @@ Partial Class Welcome
     Friend WithEvents TimerOpen As Timer
     Friend WithEvents TimerClose As Timer
     Friend WithEvents LabelLoading As Label
+    Friend WithEvents LabelAge As Label
+    Friend WithEvents LabelSector As Label
+    Friend WithEvents LabelGender As Label
 End Class

@@ -40,7 +40,7 @@
         CBoxSemester.Text = "Select Semester"
         CBoxFaculty.Text = "Select Faculty"
         GridSubjects.ClearSelection()
-        TxtTotal.Text = GridSubjects.Rows.Count
+        LabelCounter.Text = GridSubjects.Rows.Count
     End Sub
 
     Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click

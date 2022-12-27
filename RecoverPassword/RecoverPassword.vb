@@ -34,27 +34,7 @@ Public Class RecoverPassword
     End Sub
 
     Private Sub CBox_User_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBox_User.SelectedIndexChanged
-        sign_in.User_Name = CBox_User.Text
 
-        If sign_in.User_Name = "John Doe" Then
-
-            sign_in.User_Email = "johndoe@gmail.com"
-            sign_in.User_Type = "Admin"
-            sign_in.User_Exp = "268986"
-
-        ElseIf sign_in.User_Name = "Alex" Then
-
-            sign_in.User_Email = "alex@gmail.com"
-            sign_in.User_Type = "User"
-            sign_in.User_Exp = "318035"
-
-        End If
-
-        If CBox_User.Text = "Alex" Then
-            TxtBox_Email.Text = sign_in.User_Email
-        ElseIf CBox_User.Text = "John Doe" Then
-            TxtBox_Email.Text = sign_in.User_Email
-        End If
     End Sub
 
     Private Sub ButtonMin_Click(sender As Object, e As EventArgs) Handles ButtonMin.Click
