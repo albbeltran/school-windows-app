@@ -42,7 +42,6 @@ Partial Class RecoverPassword
         'PanelTitle
         '
         Me.PanelTitle.BackColor = System.Drawing.Color.Black
-        Me.PanelTitle.Controls.Add(Me.LabelTitle)
         Me.PanelTitle.Controls.Add(Me.ButtonMin)
         Me.PanelTitle.Controls.Add(Me.ButtonClose)
         Me.PanelTitle.Dock = System.Windows.Forms.DockStyle.Top
@@ -55,8 +54,8 @@ Partial Class RecoverPassword
         '
         Me.LabelTitle.AutoSize = True
         Me.LabelTitle.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTitle.ForeColor = System.Drawing.Color.White
-        Me.LabelTitle.Location = New System.Drawing.Point(127, 9)
+        Me.LabelTitle.ForeColor = System.Drawing.Color.Black
+        Me.LabelTitle.Location = New System.Drawing.Point(123, 90)
         Me.LabelTitle.Name = "LabelTitle"
         Me.LabelTitle.Size = New System.Drawing.Size(194, 23)
         Me.LabelTitle.TabIndex = 2
@@ -170,6 +169,7 @@ Partial Class RecoverPassword
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(430, 800)
+        Me.Controls.Add(Me.LabelTitle)
         Me.Controls.Add(Me.TxtBox_Email)
         Me.Controls.Add(Me.LabelPassword)
         Me.Controls.Add(Me.CBox_User)
@@ -180,7 +180,6 @@ Partial Class RecoverPassword
         Me.Name = "RecoverPassword"
         Me.Text = "RecoverPassword"
         Me.PanelTitle.ResumeLayout(False)
-        Me.PanelTitle.PerformLayout()
         Me.PanelBottom.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -78,4 +78,8 @@ Public Class Students
 
         End Try
     End Sub
+
+    Private Sub LabelTitle_Click(sender As Object, e As EventArgs) Handles LabelTitle.Click
+
+    End Sub
 End Class

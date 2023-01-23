@@ -108,7 +108,7 @@ Public Class Main
 
     Private Sub ButtonHome_Click(sender As Object, e As EventArgs) Handles ButtonHome.Click
         BackOriginalColors()
-        ButtonHome.FlatAppearance.BorderSize = 2
+        ButtonHome.FlatAppearance.BorderSize = 1
         ButtonHome.FlatAppearance.BorderColor = Color.Aqua
         LabelHour.Visible = True
         LabelDate.Visible = True
@@ -123,12 +123,15 @@ Public Class Main
         ButtonStudents.FlatAppearance.BorderSize = 0
         ButtonSubjects.FlatAppearance.BorderSize = 0
         ButtonProducts.FlatAppearance.BorderSize = 0
+        ButtonTeachers.FlatAppearance.BorderSize = 0
+        ButtonBooks.FlatAppearance.BorderSize = 0
+        ButtonMusic.FlatAppearance.BorderSize = 0
     End Sub
 
     Private Sub ButtonProducts_Click(sender As Object, e As EventArgs) Handles ButtonProducts.Click
         BackOriginalColors()
         Open_Form_Panel_Container(New Products)
-        ButtonProducts.FlatAppearance.BorderSize = 2
+        ButtonProducts.FlatAppearance.BorderSize = 1
         ButtonProducts.FlatAppearance.BorderColor = Color.Aqua
         LabelHour.Visible = False
         LabelDate.Visible = False
@@ -155,8 +158,26 @@ Public Class Main
     Private Sub ButtonTeachers_Click(sender As Object, e As EventArgs) Handles ButtonTeachers.Click
         BackOriginalColors()
         Open_Form_Panel_Container(New Teachers)
-        ButtonProducts.FlatAppearance.BorderSize = 2
-        ButtonProducts.FlatAppearance.BorderColor = Color.Aqua
+        ButtonTeachers.FlatAppearance.BorderSize = 1
+        ButtonTeachers.FlatAppearance.BorderColor = Color.Aqua
+        LabelHour.Visible = False
+        LabelDate.Visible = False
+    End Sub
+
+    Private Sub ButtonBooks_Click(sender As Object, e As EventArgs) Handles ButtonBooks.Click
+        BackOriginalColors()
+        Open_Form_Panel_Container(New Books)
+        ButtonBooks.FlatAppearance.BorderSize = 1
+        ButtonBooks.FlatAppearance.BorderColor = Color.Aqua
+        LabelHour.Visible = False
+        LabelDate.Visible = False
+    End Sub
+
+    Private Sub ButtonMusic_Click(sender As Object, e As EventArgs) Handles ButtonMusic.Click
+        BackOriginalColors()
+        Open_Form_Panel_Container(New Songs)
+        ButtonMusic.FlatAppearance.BorderSize = 1
+        ButtonMusic.FlatAppearance.BorderColor = Color.Aqua
         LabelHour.Visible = False
         LabelDate.Visible = False
     End Sub

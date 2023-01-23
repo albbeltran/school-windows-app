@@ -17,3 +17,5 @@ C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engi
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.RecoverPassword.resources
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Products.resources
 C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Teachers.resources
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Books.resources
+C:\Users\BetoB\source\repos\Requirements-Engineering\obj\Debug\Requirements_Engineering.Songs.resources

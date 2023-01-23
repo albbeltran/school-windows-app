@@ -27,12 +27,6 @@ Public Class sign_in
         CBox_User.Text = "Select User"
         CBox_User.SelectedIndex = 0
 
-        'If CBox_User.Text = "Alex" Then
-        '   TxtBox_Password.Text = User_Password
-        'ElseIf CBox_User.Text = "John Doe" Then
-        '   TxtBox_Password.Text = User_Password
-        'End If
-
         Me.Opacity = 0
         TimerOpen.Start()
     End Sub
@@ -42,8 +36,8 @@ Public Class sign_in
     End Sub
 
     Private Sub CBoxUser_IndexChanged(sender As Object, e As EventArgs) Handles CBox_User.SelectedIndexChanged
-
         Load_User_Data()
+        TxtBox_Password.Text = User_Key
 
         'User_Name = CBox_User.Text
 
@@ -88,13 +82,13 @@ Public Class sign_in
 
     Private Sub TxtBox_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBox_Password.KeyDown
         If e.KeyCode = Keys.Enter Then
-            enter_process()
+            Enter_process()
         End If
     End Sub
 
     '// PUBLIC AND PRIVATE PROCESS
 
-    Private Sub enter_process()
+    Private Sub Enter_process()
         '77 If CBox_User.Text = "John Doe" And TxtBox_Password.Text = "quack20" Or CBox_User.Text = "Alex" And TxtBox_Password.Text = "quack10" Then
         '   Me.Hide()
         '   Welcome.ShowDialog()

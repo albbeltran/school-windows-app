@@ -74,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connections\Connection_Base.vb" />
+    <Compile Include="Library\Books.Designer.vb">
+      <DependentUpon>Books.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Books.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login\sign-in.Designer.vb">
       <DependentUpon>sign-in.vb</DependentUpon>
     </Compile>
@@ -84,6 +90,12 @@
       <DependentUpon>Main.vb</DependentUpon>
     </Compile>
     <Compile Include="Main\Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Music\Songs.Designer.vb">
+      <DependentUpon>Songs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Music\Songs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -140,11 +152,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Library\Books.resx">
+      <DependentUpon>Books.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\sign-in.resx">
       <DependentUpon>sign-in.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Music\Songs.resx">
+      <DependentUpon>Songs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

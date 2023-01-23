@@ -23,7 +23,6 @@ Partial Class Students
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelBottom = New System.Windows.Forms.Panel()
-        Me.ButtonEnter = New System.Windows.Forms.Button()
         Me.LabelExp = New System.Windows.Forms.Label()
         Me.GridStudents = New System.Windows.Forms.DataGridView()
         Me.LabelTotal = New System.Windows.Forms.Label()
@@ -31,6 +30,7 @@ Partial Class Students
         Me.LabelFaculty = New System.Windows.Forms.Label()
         Me.CBoxFaculty = New System.Windows.Forms.ComboBox()
         Me.LabelTitle = New System.Windows.Forms.Label()
+        Me.ButtonDelete = New System.Windows.Forms.Button()
         Me.PanelBottom.SuspendLayout()
         CType(Me.GridStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -38,28 +38,13 @@ Partial Class Students
         'PanelBottom
         '
         Me.PanelBottom.BackColor = System.Drawing.Color.Black
-        Me.PanelBottom.Controls.Add(Me.ButtonEnter)
+        Me.PanelBottom.Controls.Add(Me.ButtonDelete)
         Me.PanelBottom.Controls.Add(Me.LabelExp)
         Me.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelBottom.Location = New System.Drawing.Point(0, 423)
+        Me.PanelBottom.Location = New System.Drawing.Point(0, 479)
         Me.PanelBottom.Name = "PanelBottom"
-        Me.PanelBottom.Size = New System.Drawing.Size(861, 70)
+        Me.PanelBottom.Size = New System.Drawing.Size(1031, 70)
         Me.PanelBottom.TabIndex = 12
-        '
-        'ButtonEnter
-        '
-        Me.ButtonEnter.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ButtonEnter.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ButtonEnter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
-        Me.ButtonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
-        Me.ButtonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEnter.ForeColor = System.Drawing.Color.White
-        Me.ButtonEnter.Location = New System.Drawing.Point(752, 0)
-        Me.ButtonEnter.Name = "ButtonEnter"
-        Me.ButtonEnter.Size = New System.Drawing.Size(109, 70)
-        Me.ButtonEnter.TabIndex = 0
-        Me.ButtonEnter.Text = "Enter"
-        Me.ButtonEnter.UseVisualStyleBackColor = True
         '
         'LabelExp
         '
@@ -81,7 +66,7 @@ Partial Class Students
         Me.GridStudents.BackgroundColor = System.Drawing.SystemColors.Control
         Me.GridStudents.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.GridStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.GridStudents.Location = New System.Drawing.Point(39, 174)
+        Me.GridStudents.Location = New System.Drawing.Point(124, 174)
         Me.GridStudents.Name = "GridStudents"
         Me.GridStudents.ReadOnly = True
         Me.GridStudents.RowHeadersWidth = 51
@@ -96,7 +81,7 @@ Partial Class Students
         Me.LabelTotal.AutoSize = True
         Me.LabelTotal.Enabled = False
         Me.LabelTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTotal.Location = New System.Drawing.Point(35, 146)
+        Me.LabelTotal.Location = New System.Drawing.Point(120, 146)
         Me.LabelTotal.Name = "LabelTotal"
         Me.LabelTotal.Size = New System.Drawing.Size(46, 20)
         Me.LabelTotal.TabIndex = 17
@@ -108,7 +93,7 @@ Partial Class Students
         Me.LabelCounter.AutoSize = True
         Me.LabelCounter.Enabled = False
         Me.LabelCounter.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCounter.Location = New System.Drawing.Point(104, 146)
+        Me.LabelCounter.Location = New System.Drawing.Point(189, 146)
         Me.LabelCounter.Name = "LabelCounter"
         Me.LabelCounter.Size = New System.Drawing.Size(18, 20)
         Me.LabelCounter.TabIndex = 18
@@ -120,7 +105,7 @@ Partial Class Students
         Me.LabelFaculty.AutoSize = True
         Me.LabelFaculty.Enabled = False
         Me.LabelFaculty.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelFaculty.Location = New System.Drawing.Point(207, 146)
+        Me.LabelFaculty.Location = New System.Drawing.Point(292, 146)
         Me.LabelFaculty.Name = "LabelFaculty"
         Me.LabelFaculty.Size = New System.Drawing.Size(63, 20)
         Me.LabelFaculty.TabIndex = 19
@@ -131,7 +116,7 @@ Partial Class Students
         Me.CBoxFaculty.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.CBoxFaculty.FormattingEnabled = True
         Me.CBoxFaculty.Items.AddRange(New Object() {"Engineering", "Administration", "Computer Science", "Philosophy", "Law", "Psychology"})
-        Me.CBoxFaculty.Location = New System.Drawing.Point(287, 144)
+        Me.CBoxFaculty.Location = New System.Drawing.Point(372, 144)
         Me.CBoxFaculty.Name = "CBoxFaculty"
         Me.CBoxFaculty.Size = New System.Drawing.Size(175, 24)
         Me.CBoxFaculty.TabIndex = 20
@@ -140,18 +125,33 @@ Partial Class Students
         '
         Me.LabelTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LabelTitle.AutoSize = True
-        Me.LabelTitle.Font = New System.Drawing.Font("Perpetua Titling MT", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTitle.Location = New System.Drawing.Point(361, 56)
+        Me.LabelTitle.Font = New System.Drawing.Font("Arial", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTitle.Location = New System.Drawing.Point(426, 60)
         Me.LabelTitle.Name = "LabelTitle"
-        Me.LabelTitle.Size = New System.Drawing.Size(160, 33)
+        Me.LabelTitle.Size = New System.Drawing.Size(168, 33)
         Me.LabelTitle.TabIndex = 21
         Me.LabelTitle.Text = "STUDENTS"
+        '
+        'ButtonDelete
+        '
+        Me.ButtonDelete.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.ButtonDelete.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ButtonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
+        Me.ButtonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.ButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonDelete.ForeColor = System.Drawing.Color.White
+        Me.ButtonDelete.Location = New System.Drawing.Point(910, 13)
+        Me.ButtonDelete.Name = "ButtonDelete"
+        Me.ButtonDelete.Size = New System.Drawing.Size(109, 45)
+        Me.ButtonDelete.TabIndex = 10
+        Me.ButtonDelete.Text = "Delete"
+        Me.ButtonDelete.UseVisualStyleBackColor = True
         '
         'Students
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(861, 493)
+        Me.ClientSize = New System.Drawing.Size(1031, 549)
         Me.Controls.Add(Me.LabelTitle)
         Me.Controls.Add(Me.CBoxFaculty)
         Me.Controls.Add(Me.LabelFaculty)
@@ -170,7 +170,6 @@ Partial Class Students
 
     End Sub
     Friend WithEvents PanelBottom As Panel
-    Friend WithEvents ButtonEnter As Button
     Friend WithEvents LabelExp As Label
     Friend WithEvents GridStudents As DataGridView
     Friend WithEvents LabelTotal As Label
@@ -178,4 +177,5 @@ Partial Class Students
     Friend WithEvents LabelFaculty As Label
     Friend WithEvents CBoxFaculty As ComboBox
     Friend WithEvents LabelTitle As Label
+    Friend WithEvents ButtonDelete As Button
 End Class

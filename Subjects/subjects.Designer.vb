@@ -38,13 +38,13 @@ Partial Class Subjects
         Me.ButtonClear = New System.Windows.Forms.Button()
         Me.ButtonEnter = New System.Windows.Forms.Button()
         Me.GridSubjects = New System.Windows.Forms.DataGridView()
+        Me.LabelCounter = New System.Windows.Forms.Label()
+        Me.LabelTotal = New System.Windows.Forms.Label()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.semestre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.facultad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LabelCounter = New System.Windows.Forms.Label()
-        Me.LabelTotal = New System.Windows.Forms.Label()
         Me.PanelBottom.SuspendLayout()
         CType(Me.GridSubjects, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -53,10 +53,10 @@ Partial Class Subjects
         '
         Me.LabelTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LabelTitle.AutoSize = True
-        Me.LabelTitle.Font = New System.Drawing.Font("Perpetua Titling MT", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTitle.Location = New System.Drawing.Point(407, 42)
+        Me.LabelTitle.Font = New System.Drawing.Font("Arial", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTitle.Location = New System.Drawing.Point(406, 56)
         Me.LabelTitle.Name = "LabelTitle"
-        Me.LabelTitle.Size = New System.Drawing.Size(142, 33)
+        Me.LabelTitle.Size = New System.Drawing.Size(164, 33)
         Me.LabelTitle.TabIndex = 0
         Me.LabelTitle.Text = "SUBJECTS"
         '
@@ -182,12 +182,13 @@ Partial Class Subjects
         '
         'ButtonDelete
         '
+        Me.ButtonDelete.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.ButtonDelete.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.ButtonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
         Me.ButtonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
         Me.ButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonDelete.ForeColor = System.Drawing.Color.White
-        Me.ButtonDelete.Location = New System.Drawing.Point(581, 13)
+        Me.ButtonDelete.Location = New System.Drawing.Point(609, 13)
         Me.ButtonDelete.Name = "ButtonDelete"
         Me.ButtonDelete.Size = New System.Drawing.Size(109, 45)
         Me.ButtonDelete.TabIndex = 2
@@ -196,12 +197,13 @@ Partial Class Subjects
         '
         'ButtonClear
         '
+        Me.ButtonClear.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.ButtonClear.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.ButtonClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
         Me.ButtonClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
         Me.ButtonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonClear.ForeColor = System.Drawing.Color.White
-        Me.ButtonClear.Location = New System.Drawing.Point(713, 13)
+        Me.ButtonClear.Location = New System.Drawing.Point(736, 13)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(109, 45)
         Me.ButtonClear.TabIndex = 1
@@ -210,12 +212,13 @@ Partial Class Subjects
         '
         'ButtonEnter
         '
+        Me.ButtonEnter.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.ButtonEnter.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.ButtonEnter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
         Me.ButtonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
         Me.ButtonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonEnter.ForeColor = System.Drawing.Color.White
-        Me.ButtonEnter.Location = New System.Drawing.Point(842, 13)
+        Me.ButtonEnter.Location = New System.Drawing.Point(861, 13)
         Me.ButtonEnter.Name = "ButtonEnter"
         Me.ButtonEnter.Size = New System.Drawing.Size(109, 45)
         Me.ButtonEnter.TabIndex = 0
@@ -235,41 +238,6 @@ Partial Class Subjects
         Me.GridSubjects.RowTemplate.Height = 24
         Me.GridSubjects.Size = New System.Drawing.Size(868, 150)
         Me.GridSubjects.TabIndex = 16
-        '
-        'id
-        '
-        Me.id.HeaderText = "id"
-        Me.id.MinimumWidth = 6
-        Me.id.Name = "id"
-        Me.id.Width = 125
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "nombre"
-        Me.nombre.MinimumWidth = 6
-        Me.nombre.Name = "nombre"
-        Me.nombre.Width = 125
-        '
-        'semestre
-        '
-        Me.semestre.HeaderText = "semestre"
-        Me.semestre.MinimumWidth = 6
-        Me.semestre.Name = "semestre"
-        Me.semestre.Width = 125
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "descripcion"
-        Me.descripcion.MinimumWidth = 6
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.Width = 125
-        '
-        'facultad
-        '
-        Me.facultad.HeaderText = "facultad"
-        Me.facultad.MinimumWidth = 6
-        Me.facultad.Name = "facultad"
-        Me.facultad.Width = 125
         '
         'LabelCounter
         '
@@ -292,6 +260,41 @@ Partial Class Subjects
         Me.LabelTotal.Size = New System.Drawing.Size(46, 20)
         Me.LabelTotal.TabIndex = 19
         Me.LabelTotal.Text = "Total"
+        '
+        'id
+        '
+        Me.id.HeaderText = "ID"
+        Me.id.MinimumWidth = 6
+        Me.id.Name = "id"
+        Me.id.Width = 125
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Name"
+        Me.nombre.MinimumWidth = 6
+        Me.nombre.Name = "nombre"
+        Me.nombre.Width = 125
+        '
+        'semestre
+        '
+        Me.semestre.HeaderText = "Semester"
+        Me.semestre.MinimumWidth = 6
+        Me.semestre.Name = "semestre"
+        Me.semestre.Width = 125
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "Description"
+        Me.descripcion.MinimumWidth = 6
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.Width = 125
+        '
+        'facultad
+        '
+        Me.facultad.HeaderText = "Faculty"
+        Me.facultad.MinimumWidth = 6
+        Me.facultad.Name = "facultad"
+        Me.facultad.Width = 125
         '
         'Subjects
         '

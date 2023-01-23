@@ -23,7 +23,6 @@ Partial Class Teachers
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelBottom = New System.Windows.Forms.Panel()
-        Me.ButtonEnter = New System.Windows.Forms.Button()
         Me.LabelExp = New System.Windows.Forms.Label()
         Me.LabelTitle = New System.Windows.Forms.Label()
         Me.LabelTotal = New System.Windows.Forms.Label()
@@ -38,6 +37,7 @@ Partial Class Teachers
         Me.LabelFaculty = New System.Windows.Forms.Label()
         Me.LabelSubject = New System.Windows.Forms.Label()
         Me.LabelType = New System.Windows.Forms.Label()
+        Me.ButtonDelete = New System.Windows.Forms.Button()
         Me.PanelBottom.SuspendLayout()
         CType(Me.GridStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,28 +45,13 @@ Partial Class Teachers
         'PanelBottom
         '
         Me.PanelBottom.BackColor = System.Drawing.Color.Black
-        Me.PanelBottom.Controls.Add(Me.ButtonEnter)
+        Me.PanelBottom.Controls.Add(Me.ButtonDelete)
         Me.PanelBottom.Controls.Add(Me.LabelExp)
         Me.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelBottom.Location = New System.Drawing.Point(0, 465)
         Me.PanelBottom.Name = "PanelBottom"
         Me.PanelBottom.Size = New System.Drawing.Size(955, 70)
         Me.PanelBottom.TabIndex = 13
-        '
-        'ButtonEnter
-        '
-        Me.ButtonEnter.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ButtonEnter.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ButtonEnter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
-        Me.ButtonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
-        Me.ButtonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEnter.ForeColor = System.Drawing.Color.White
-        Me.ButtonEnter.Location = New System.Drawing.Point(846, 0)
-        Me.ButtonEnter.Name = "ButtonEnter"
-        Me.ButtonEnter.Size = New System.Drawing.Size(109, 70)
-        Me.ButtonEnter.TabIndex = 0
-        Me.ButtonEnter.Text = "Enter"
-        Me.ButtonEnter.UseVisualStyleBackColor = True
         '
         'LabelExp
         '
@@ -84,10 +69,10 @@ Partial Class Teachers
         '
         Me.LabelTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LabelTitle.AutoSize = True
-        Me.LabelTitle.Font = New System.Drawing.Font("Perpetua Titling MT", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTitle.Location = New System.Drawing.Point(404, 46)
+        Me.LabelTitle.Font = New System.Drawing.Font("Arial", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTitle.Location = New System.Drawing.Point(392, 62)
         Me.LabelTitle.Name = "LabelTitle"
-        Me.LabelTitle.Size = New System.Drawing.Size(154, 33)
+        Me.LabelTitle.Size = New System.Drawing.Size(169, 33)
         Me.LabelTitle.TabIndex = 22
         Me.LabelTitle.Text = "TEACHERS"
         '
@@ -238,6 +223,21 @@ Partial Class Teachers
         Me.LabelType.TabIndex = 34
         Me.LabelType.Text = "Type"
         '
+        'ButtonDelete
+        '
+        Me.ButtonDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDelete.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ButtonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
+        Me.ButtonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.ButtonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonDelete.ForeColor = System.Drawing.Color.White
+        Me.ButtonDelete.Location = New System.Drawing.Point(834, 13)
+        Me.ButtonDelete.Name = "ButtonDelete"
+        Me.ButtonDelete.Size = New System.Drawing.Size(109, 45)
+        Me.ButtonDelete.TabIndex = 10
+        Me.ButtonDelete.Text = "Delete"
+        Me.ButtonDelete.UseVisualStyleBackColor = True
+        '
         'Teachers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -269,7 +269,6 @@ Partial Class Teachers
     End Sub
 
     Friend WithEvents PanelBottom As Panel
-    Friend WithEvents ButtonEnter As Button
     Friend WithEvents LabelExp As Label
     Friend WithEvents LabelTitle As Label
     Friend WithEvents LabelTotal As Label
@@ -284,4 +283,5 @@ Partial Class Teachers
     Friend WithEvents LabelFaculty As Label
     Friend WithEvents LabelSubject As Label
     Friend WithEvents LabelType As Label
+    Friend WithEvents ButtonDelete As Button
 End Class

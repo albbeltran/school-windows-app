@@ -120,4 +120,12 @@ Public Class Teachers
 
         End Try
     End Sub
+
+    Private Sub LabelTitle_Click(sender As Object, e As EventArgs) Handles LabelTitle.Click
+
+    End Sub
+
+    Private Sub ButtonDelete_Click(sender As Object, e As EventArgs) Handles ButtonDelete.Click
+
+    End Sub
 End Class

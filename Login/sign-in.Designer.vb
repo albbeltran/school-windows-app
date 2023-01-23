@@ -25,7 +25,6 @@ Partial Class sign_in
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(sign_in))
         Me.PanelTitle = New System.Windows.Forms.Panel()
-        Me.LabelTitle = New System.Windows.Forms.Label()
         Me.ButtonMin = New System.Windows.Forms.Button()
         Me.ButtonClose = New System.Windows.Forms.Button()
         Me.LabelUser = New System.Windows.Forms.Label()
@@ -49,7 +48,6 @@ Partial Class sign_in
         'PanelTitle
         '
         Me.PanelTitle.BackColor = System.Drawing.Color.Black
-        Me.PanelTitle.Controls.Add(Me.LabelTitle)
         Me.PanelTitle.Controls.Add(Me.ButtonMin)
         Me.PanelTitle.Controls.Add(Me.ButtonClose)
         Me.PanelTitle.Dock = System.Windows.Forms.DockStyle.Top
@@ -58,23 +56,12 @@ Partial Class sign_in
         Me.PanelTitle.Size = New System.Drawing.Size(409, 45)
         Me.PanelTitle.TabIndex = 0
         '
-        'LabelTitle
-        '
-        Me.LabelTitle.AutoSize = True
-        Me.LabelTitle.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTitle.ForeColor = System.Drawing.Color.White
-        Me.LabelTitle.Location = New System.Drawing.Point(167, 8)
-        Me.LabelTitle.Name = "LabelTitle"
-        Me.LabelTitle.Size = New System.Drawing.Size(76, 23)
-        Me.LabelTitle.TabIndex = 2
-        Me.LabelTitle.Text = "Sign In"
-        '
         'ButtonMin
         '
         Me.ButtonMin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonMin.DialogResult = System.Windows.Forms.DialogResult.Ignore
         Me.ButtonMin.FlatAppearance.BorderSize = 0
-        Me.ButtonMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.ButtonMin.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ButtonMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonMin.ForeColor = System.Drawing.Color.White
         Me.ButtonMin.Location = New System.Drawing.Point(321, 0)
@@ -103,11 +90,11 @@ Partial Class sign_in
         '
         Me.LabelUser.AutoSize = True
         Me.LabelUser.BackColor = System.Drawing.Color.Transparent
-        Me.LabelUser.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUser.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelUser.ForeColor = System.Drawing.Color.Black
         Me.LabelUser.Location = New System.Drawing.Point(61, 339)
         Me.LabelUser.Name = "LabelUser"
-        Me.LabelUser.Size = New System.Drawing.Size(43, 17)
+        Me.LabelUser.Size = New System.Drawing.Size(43, 19)
         Me.LabelUser.TabIndex = 3
         Me.LabelUser.Text = "User"
         '
@@ -115,11 +102,11 @@ Partial Class sign_in
         '
         Me.LabelPassword.AutoSize = True
         Me.LabelPassword.BackColor = System.Drawing.Color.Transparent
-        Me.LabelPassword.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelPassword.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelPassword.ForeColor = System.Drawing.Color.Black
-        Me.LabelPassword.Location = New System.Drawing.Point(61, 405)
+        Me.LabelPassword.Location = New System.Drawing.Point(60, 400)
         Me.LabelPassword.Name = "LabelPassword"
-        Me.LabelPassword.Size = New System.Drawing.Size(80, 17)
+        Me.LabelPassword.Size = New System.Drawing.Size(71, 22)
         Me.LabelPassword.TabIndex = 4
         Me.LabelPassword.Text = "Password"
         '
@@ -144,11 +131,11 @@ Partial Class sign_in
         '
         Me.LinkLabel_Recover.AutoSize = True
         Me.LinkLabel_Recover.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel_Recover.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel_Recover.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel_Recover.LinkColor = System.Drawing.Color.Black
         Me.LinkLabel_Recover.Location = New System.Drawing.Point(98, 476)
         Me.LinkLabel_Recover.Name = "LinkLabel_Recover"
-        Me.LinkLabel_Recover.Size = New System.Drawing.Size(201, 17)
+        Me.LinkLabel_Recover.Size = New System.Drawing.Size(196, 20)
         Me.LinkLabel_Recover.TabIndex = 7
         Me.LinkLabel_Recover.TabStop = True
         Me.LinkLabel_Recover.Text = "Did you forget your password?"
@@ -180,12 +167,12 @@ Partial Class sign_in
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(171, 273)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label1.Size = New System.Drawing.Size(65, 20)
+        Me.Label1.Size = New System.Drawing.Size(74, 22)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Sign In"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -209,7 +196,7 @@ Partial Class sign_in
         Me.ButtonShowPass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.ButtonShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonShowPass.ForeColor = System.Drawing.Color.Black
-        Me.ButtonShowPass.Location = New System.Drawing.Point(321, 428)
+        Me.ButtonShowPass.Location = New System.Drawing.Point(311, 428)
         Me.ButtonShowPass.Name = "ButtonShowPass"
         Me.ButtonShowPass.Size = New System.Drawing.Size(19, 16)
         Me.ButtonShowPass.TabIndex = 16
@@ -227,7 +214,7 @@ Partial Class sign_in
         Me.ButtonHidePass.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.ButtonHidePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonHidePass.ForeColor = System.Drawing.Color.Black
-        Me.ButtonHidePass.Location = New System.Drawing.Point(321, 428)
+        Me.ButtonHidePass.Location = New System.Drawing.Point(311, 428)
         Me.ButtonHidePass.Name = "ButtonHidePass"
         Me.ButtonHidePass.Size = New System.Drawing.Size(19, 16)
         Me.ButtonHidePass.TabIndex = 3
@@ -236,9 +223,10 @@ Partial Class sign_in
         'PictureBoxLogo
         '
         Me.PictureBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBoxLogo.BackColor = System.Drawing.Color.Transparent
         Me.PictureBoxLogo.BackgroundImage = CType(resources.GetObject("PictureBoxLogo.BackgroundImage"), System.Drawing.Image)
         Me.PictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBoxLogo.Location = New System.Drawing.Point(117, 88)
+        Me.PictureBoxLogo.Location = New System.Drawing.Point(118, 72)
         Me.PictureBoxLogo.Name = "PictureBoxLogo"
         Me.PictureBoxLogo.Size = New System.Drawing.Size(176, 182)
         Me.PictureBoxLogo.TabIndex = 1
@@ -265,7 +253,6 @@ Partial Class sign_in
         Me.Name = "sign_in"
         Me.Text = "sign_in"
         Me.PanelTitle.ResumeLayout(False)
-        Me.PanelTitle.PerformLayout()
         Me.PanelBottom.ResumeLayout(False)
         CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -276,7 +263,6 @@ Partial Class sign_in
     Friend WithEvents PanelTitle As Panel
     Friend WithEvents ButtonMin As Button
     Friend WithEvents ButtonClose As Button
-    Friend WithEvents LabelTitle As Label
     Friend WithEvents PictureBoxLogo As PictureBox
     Public WithEvents LabelUser As Label
     Friend WithEvents LabelPassword As Label

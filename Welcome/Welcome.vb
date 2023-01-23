@@ -22,7 +22,7 @@ Public Class Welcome
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub ButtonEnter_Click(sender As Object, e As EventArgs) Handles ButtonEnter.Click
+    Private Sub ButtonEnter_Click(sender As Object, e As EventArgs)
         MsgBox("The password is: " & sign_in.User_Key, MsgBoxStyle.OkOnly, "Welcome")
     End Sub
 
@@ -49,4 +49,5 @@ Public Class Welcome
             Me.Close()
         End If
     End Sub
+
 End Class

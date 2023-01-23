@@ -49,12 +49,12 @@ Partial Class Products
         '
         Me.LabelTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LabelTitle.AutoSize = True
-        Me.LabelTitle.Font = New System.Drawing.Font("Perpetua Titling MT", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTitle.Location = New System.Drawing.Point(408, 59)
+        Me.LabelTitle.Font = New System.Drawing.Font("Arial", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTitle.Location = New System.Drawing.Point(429, 58)
         Me.LabelTitle.Name = "LabelTitle"
-        Me.LabelTitle.Size = New System.Drawing.Size(192, 33)
+        Me.LabelTitle.Size = New System.Drawing.Size(171, 33)
         Me.LabelTitle.TabIndex = 1
-        Me.LabelTitle.Text = "PRODUCTOS"
+        Me.LabelTitle.Text = "PRODUCTS"
         '
         'CBoxLaboratory
         '
@@ -238,12 +238,13 @@ Partial Class Products
         '
         'ButtonEnter
         '
+        Me.ButtonEnter.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.ButtonEnter.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.ButtonEnter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
         Me.ButtonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
         Me.ButtonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonEnter.ForeColor = System.Drawing.Color.White
-        Me.ButtonEnter.Location = New System.Drawing.Point(835, 13)
+        Me.ButtonEnter.Location = New System.Drawing.Point(910, 13)
         Me.ButtonEnter.Name = "ButtonEnter"
         Me.ButtonEnter.Size = New System.Drawing.Size(109, 45)
         Me.ButtonEnter.TabIndex = 0
