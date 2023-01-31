@@ -47,12 +47,6 @@ Public Class Books
 
             LabelCounter.Text = GridBooks.Rows.Count
 
-            GridBooks.Columns("Invoice").Width = 100
-            GridBooks.Columns("Nombre").Width = 100
-            GridBooks.Columns("Autor").Width = 80
-            GridBooks.Columns("Descripcion").Width = 120
-            GridBooks.Columns("Sucursal").Width = 140
-
 
         Catch ex As Exception
 
@@ -68,11 +62,11 @@ Public Class Books
             TxtDescription2.Text = Nothing Or
             CBoxBranch.Text = "Select a branch" Then
 
-            MsgBox("There can be no blank fields", MsgBoxStyle.Critical, "Books")
+            MsgBox("There can be no blank fields", MsgBoxStyle.Critical, "Add Book")
 
         Else
 
-            Dim Response As DialogResult = MessageBox.Show("A new register will be added, do you want to continue?", "Books", MessageBoxButtons.YesNo)
+            Dim Response As DialogResult = MessageBox.Show("A new register will be added, do you want to continue?", "Add Book", MessageBoxButtons.YesNo)
 
             If Response = DialogResult.Yes Then
 
@@ -103,7 +97,7 @@ Public Class Books
 
             If GridBooks.SelectedRows.Count = 0 Then
 
-                MsgBox("There is no selected row!", MsgBoxStyle.Critical, "Books")
+                MsgBox("There is no selected row!", MsgBoxStyle.Critical, "Delete Book")
 
             End If
 
@@ -113,7 +107,7 @@ Public Class Books
 
         End Try
 
-        Dim Response As DialogResult = MessageBox.Show("The register will be deleted, do you want to continue?", "Books", MessageBoxButtons.YesNo)
+        Dim Response As DialogResult = MessageBox.Show("The register will be deleted, do you want to continue?", "Delete Book", MessageBoxButtons.YesNo)
 
         If Response = DialogResult.Yes Then
             Dim Command As New OleDbCommand
@@ -134,11 +128,12 @@ Public Class Books
             Dim Invoice As Double
             Invoice = TxtInvoice.Text
             Command.Connection = connection
-            Command.CommandText = "UPDATE Libros SET Nombre='" & TxtName.Text &
-                "', Autor='" & TxtAuthor.Text &
-                "', Descripcion='" & TxtDescription2.Text &
-                "', Sucursal='" & CBoxBranch.Text &
-                "' WHERE Folio" & Invoice
+            Command.CommandText = "UPDATE Libros SET Nombre = '" & TxtName.Text &
+                "', Autor = '" & TxtAuthor.Text &
+                "', Descripcion = '" & TxtDescription2.Text &
+                "', Sucursal = '" & CBoxBranch.Text &
+                "' WHERE Invoice = " & Invoice
+
             Command.ExecuteNonQuery()
 
         Catch ex As Exception
@@ -149,7 +144,25 @@ Public Class Books
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
-        Update_Books()
+        If TxtInvoice.Text = Nothing Or
+            TxtName.Text = Nothing Or
+            TxtAuthor.Text = Nothing Or
+            TxtDescription2.Text = Nothing Or
+            CBoxBranch.Text = "Select a branch" Then
+
+            MsgBox("There can be no blank fields", MsgBoxStyle.Critical, "Update Book")
+
+        Else
+            Dim Response As DialogResult = MessageBox.Show("The register will be updated, do you want to continue?", "Update Book", MessageBoxButtons.YesNo)
+
+            If Response = DialogResult.Yes Then
+                Update_Books()
+                Load_Books()
+                Clear_Values()
+
+            ElseIf Response = DialogResult.No Then
+            End If
+        End If
     End Sub
 
     Private Sub Validate_Invoice()
@@ -166,7 +179,7 @@ Public Class Books
             Register = Packet.Tables("Libros").Rows.Count
             If Register <> 0 Then
 
-                MsgBox("The invoice is already in our registers, please try again.", MsgBoxStyle.Critical, "Books")
+                MsgBox("The invoice is already in our registers, please try again.", MsgBoxStyle.Critical, "Book Inovice")
                 TxtInvoice.Focus()
 
             End If
@@ -186,10 +199,10 @@ Public Class Books
         Try
             For Each row As DataGridViewRow In GridBooks.SelectedRows
                 Dim Invoice As Double = row.Cells("Invoice").Value
-                Dim Name As String = row.Cells("Name").Value
-                Dim Author As String = row.Cells("Author").Value
-                Dim Description As String = row.Cells("Description").Value
-                Dim Branch As String = row.Cells("Branch").Value
+                Dim Name As String = row.Cells("Nombre").Value
+                Dim Author As String = row.Cells("Autor").Value
+                Dim Description As String = row.Cells("Descripcion").Value
+                Dim Branch As String = row.Cells("Sucursal").Value
 
                 TxtInvoice.Text = Invoice
                 TxtName.Text = Name

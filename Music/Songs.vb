@@ -71,11 +71,11 @@ Public Class Songs
             CBoxGenrer.Text = "Select a genrer" Or
             TxtYear.Text = Nothing Then
 
-            MsgBox("There can be no blank fields", MsgBoxStyle.Critical, "Music")
+            MsgBox("There can be no blank fields", MsgBoxStyle.Critical, "Add Album")
 
         Else
 
-            Dim Response As DialogResult = MessageBox.Show("A new register will be added, do you want to continue?", "Music", MessageBoxButtons.YesNo)
+            Dim Response As DialogResult = MessageBox.Show("A new register will be added, do you want to continue?", "Add Album", MessageBoxButtons.YesNo)
 
             If Response = DialogResult.Yes Then
 
@@ -107,7 +107,7 @@ Public Class Songs
 
             If GridMusic.SelectedRows.Count = 0 Then
 
-                MsgBox("There is no selected row!", MsgBoxStyle.Critical, "Music")
+                MsgBox("There is no selected row!", MsgBoxStyle.Critical, "Delete Album")
 
             End If
 
@@ -117,7 +117,7 @@ Public Class Songs
 
         End Try
 
-        Dim Response As DialogResult = MessageBox.Show("The register will be deleted, do you want to continue?", "Music", MessageBoxButtons.YesNo)
+        Dim Response As DialogResult = MessageBox.Show("The register will be deleted, do you want to continue?", "Delete Album", MessageBoxButtons.YesNo)
 
         If Response = DialogResult.Yes Then
             Dim command As New OleDbCommand
@@ -138,12 +138,12 @@ Public Class Songs
             Dim ID As Double
             ID = TxtID.Text
             Command.Connection = connection
-            Command.CommandText = "UPDATE Musica SET Album='" & TxtAlbum.Text &
-                "', Artista='" & TxtArtist.Text &
-                "', Numero_Canciones='" & TxtSongs.Text &
-                "', Genero='" & CBoxGenrer.Text &
-                "', Año='" & TxtYear.Text &
-                "' WHERE ID" & ID
+            Command.CommandText = "UPDATE Musica SET Album ='" & TxtAlbum.Text &
+                "', Artista ='" & TxtArtist.Text &
+                "', Numero_Canciones ='" & TxtSongs.Text &
+                "', Genero ='" & CBoxGenrer.Text &
+                "', Año ='" & TxtYear.Text &
+                "' WHERE ID = " & ID
             Command.ExecuteNonQuery()
 
         Catch ex As Exception
@@ -154,7 +154,26 @@ Public Class Songs
     End Sub
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
-        Update_Album()
+        If TxtID.Text = Nothing Or
+            TxtAlbum.Text = Nothing Or
+            TxtArtist.Text = Nothing Or
+            TxtSongs.Text = Nothing Or
+            CBoxGenrer.Text = "Select a genrer" Or
+            TxtYear.Text = Nothing Then
+
+            MsgBox("There can be no blank fields", MsgBoxStyle.Critical, "Update")
+
+        Else
+            Dim Response As DialogResult = MessageBox.Show("The register will be updated, do you want to continue?", "Update", MessageBoxButtons.YesNo)
+
+            If Response = DialogResult.Yes Then
+                Update_Album()
+                Load_Albums()
+                Clear_Values()
+
+            ElseIf Response = DialogResult.No Then
+            End If
+        End If
     End Sub
 
     Private Sub Validate_ID()
@@ -171,7 +190,7 @@ Public Class Songs
             Register = Packet.Tables("Musica").Rows.Count
             If Register <> 0 Then
 
-                MsgBox("The invoice is already in our registers, please try again.", MsgBoxStyle.Critical, "Musica")
+                MsgBox("The invoice is already in our registers, please try again.", MsgBoxStyle.Critical, "Album Invoice")
                 TxtID.Focus()
 
             End If
@@ -191,10 +210,10 @@ Public Class Songs
             For Each row As DataGridViewRow In GridMusic.SelectedRows
                 Dim ID As Double = row.Cells("ID").Value
                 Dim Album As String = row.Cells("Album").Value
-                Dim Artist As String = row.Cells("Artist").Value
-                Dim Songs As String = row.Cells("Songs").Value
-                Dim Genrer As String = row.Cells("Genrer").Value
-                Dim Year As String = row.Cells("Year").Value
+                Dim Artist As String = row.Cells("Artista").Value
+                Dim Songs As String = row.Cells("Numero_Canciones").Value
+                Dim Genrer As String = row.Cells("Genero").Value
+                Dim Year As String = row.Cells("Año").Value
 
                 TxtID.Text = ID
                 TxtAlbum.Text = Album

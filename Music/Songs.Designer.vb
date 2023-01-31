@@ -140,6 +140,7 @@ Partial Class Songs
         Me.GridMusic.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridMusic.Location = New System.Drawing.Point(93, 288)
         Me.GridMusic.Name = "GridMusic"
+        Me.GridMusic.ReadOnly = True
         Me.GridMusic.RowHeadersWidth = 51
         Me.GridMusic.RowTemplate.Height = 24
         Me.GridMusic.Size = New System.Drawing.Size(850, 150)

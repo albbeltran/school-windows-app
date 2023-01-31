@@ -36,11 +36,11 @@ Partial Class Books
         Me.TxtInvoice = New System.Windows.Forms.TextBox()
         Me.LabelTitle = New System.Windows.Forms.Label()
         Me.PanelBottom = New System.Windows.Forms.Panel()
+        Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.ButtonDelete = New System.Windows.Forms.Button()
         Me.ButtonClear = New System.Windows.Forms.Button()
         Me.ButtonEnter = New System.Windows.Forms.Button()
         Me.TxtAuthor = New System.Windows.Forms.TextBox()
-        Me.ButtonUpdate = New System.Windows.Forms.Button()
         CType(Me.GridBooks, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBottom.SuspendLayout()
         Me.SuspendLayout()
@@ -49,6 +49,7 @@ Partial Class Books
         '
         Me.GridBooks.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.GridBooks.AllowUserToAddRows = False
+        Me.GridBooks.AllowUserToDeleteRows = False
         Me.GridBooks.AllowUserToResizeColumns = False
         Me.GridBooks.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.GridBooks.BackgroundColor = System.Drawing.SystemColors.Control
@@ -56,6 +57,7 @@ Partial Class Books
         Me.GridBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridBooks.Location = New System.Drawing.Point(93, 297)
         Me.GridBooks.Name = "GridBooks"
+        Me.GridBooks.ReadOnly = True
         Me.GridBooks.RowHeadersWidth = 51
         Me.GridBooks.RowTemplate.Height = 24
         Me.GridBooks.Size = New System.Drawing.Size(850, 150)
@@ -207,6 +209,21 @@ Partial Class Books
         Me.PanelBottom.Size = New System.Drawing.Size(1031, 70)
         Me.PanelBottom.TabIndex = 48
         '
+        'ButtonUpdate
+        '
+        Me.ButtonUpdate.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.ButtonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ButtonUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
+        Me.ButtonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
+        Me.ButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonUpdate.ForeColor = System.Drawing.Color.White
+        Me.ButtonUpdate.Location = New System.Drawing.Point(531, 13)
+        Me.ButtonUpdate.Name = "ButtonUpdate"
+        Me.ButtonUpdate.Size = New System.Drawing.Size(109, 45)
+        Me.ButtonUpdate.TabIndex = 4
+        Me.ButtonUpdate.Text = "Update"
+        Me.ButtonUpdate.UseVisualStyleBackColor = True
+        '
         'ButtonDelete
         '
         Me.ButtonDelete.Anchor = System.Windows.Forms.AnchorStyles.Right
@@ -260,21 +277,6 @@ Partial Class Books
         Me.TxtAuthor.Size = New System.Drawing.Size(190, 22)
         Me.TxtAuthor.TabIndex = 49
         Me.TxtAuthor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ButtonUpdate
-        '
-        Me.ButtonUpdate.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.ButtonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ButtonUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray
-        Me.ButtonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray
-        Me.ButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonUpdate.ForeColor = System.Drawing.Color.White
-        Me.ButtonUpdate.Location = New System.Drawing.Point(531, 13)
-        Me.ButtonUpdate.Name = "ButtonUpdate"
-        Me.ButtonUpdate.Size = New System.Drawing.Size(109, 45)
-        Me.ButtonUpdate.TabIndex = 4
-        Me.ButtonUpdate.Text = "Update"
-        Me.ButtonUpdate.UseVisualStyleBackColor = True
         '
         'Books
         '
